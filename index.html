@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript for Beginners – Complete Lesson Notes</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progress"></div>
+    </div>
+
+    <!-- Sidebar -->
+    <nav id="sidebar">
+      <div class="sidebar-header">
+        <div class="badge">Beginner</div>
+        <h2>JavaScript Complete<br />Lesson Notes</h2>
+      </div>
+
+      <div class="nav-section">Chapters</div>
+      <a class="nav-link" href="#intro"
+        ><span class="nav-num">01</span> Introduction to JavaScript</a
+      >
+      <a class="nav-link" href="#syntax"
+        ><span class="nav-num">02</span> Language and Syntax</a
+      >
+      <a class="nav-link" href="#dom"
+        ><span class="nav-num">03</span> Document & Browser Objects</a
+      >
+      <a class="nav-link" href="#events"
+        ><span class="nav-num">04</span> Event-driven Programming</a
+      >
+      <a class="nav-link" href="#variables"
+        ><span class="nav-num">05</span> Variables, Operators & Data Types</a
+      >
+      <a class="nav-link" href="#objects"
+        ><span class="nav-num">06</span> Objects and Arrays</a
+      >
+      <a class="nav-link" href="#control"
+        ><span class="nav-num">07</span> Events, Conditionals & Looping</a
+      >
+      <a class="nav-link" href="#functions"
+        ><span class="nav-num">08</span> Functions & Form Validation</a
+      >
+    </nav>
+
+    <!-- Main -->
+    <main id="main">
+      <!-- Hero -->
+      <div class="hero">
+        <div class="hero-eyebrow">Complete Lesson Notes</div>
+        <h1>Learn <span>JavaScript</span><br />From Scratch</h1>
+        <p>
+          A thorough, structured course for absolute beginners. Each chapter
+          includes explanations, code examples, exercises, and an assessment.
+        </p>
+        <div class="hero-meta">
+          <div class="meta-item">
+            <span class="meta-label">Chapters</span>
+            <span class="meta-value">8</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Level</span>
+            <span class="meta-value">Beginner</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Exercises</span>
+            <span class="meta-value">16</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Assessments</span>
+            <span class="meta-value">8</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════
+       LESSON 1 — INTRODUCTION TO JAVASCRIPT
+  ══════════════════════════════ -->
+      <section class="lesson" id="intro">
+        <div class="lesson-header">
+          <div class="lesson-num">Lesson 01</div>
+          <div class="lesson-title-group">
+            <h2>Introduction to JavaScript</h2>
+            <span class="subtitle">What is JavaScript and why does it matter?</span>
+          </div>
+        </div>
+
+        <h3>What is JavaScript?</h3>
+        <p>
+          <strong>JavaScript</strong> is a <strong>programming language</strong> that makes websites interactive. 
+          While HTML provides structure and CSS provides styling, JavaScript provides <em>behavior</em> — 
+          it's what makes buttons respond to clicks, forms validate input, and content update without reloading the page.
+        </p>
+        <p>
+          JavaScript runs in the browser (client-side) and can also run on servers (Node.js). 
+          It is one of the three core technologies of the web, alongside HTML and CSS.
+        </p>
+
+        <h3>A Brief History</h3>
+        <p>
+          JavaScript was created by <strong>Brendan Eich</strong> in 1995 in just 10 days while working at Netscape. 
+          Despite its name, JavaScript has no direct relation to Java. The language has evolved significantly, 
+          with modern standards maintained by <strong>ECMAScript</strong> (ES6, ES2015, ES2020, etc.).
+        </p>
+
+        <h3>What Can JavaScript Do?</h3>
+        <ul>
+          <li>Respond to user interactions (clicks, typing, scrolling)</li>
+          <li>Manipulate HTML and CSS dynamically</li>
+          <li>Validate form data before submission</li>
+          <li>Create animations and visual effects</li>
+          <li>Fetch data from servers without page reload (AJAX)</li>
+          <li>Build complete web applications (React, Vue, Angular)</li>
+          <li>Create mobile apps (React Native) and desktop apps (Electron)</li>
+        </ul>
+
+        <h3>Where Does JavaScript Code Go?</h3>
+        <p>JavaScript can be added to HTML in three ways:</p>
+        
+        <h4>1. Inline JavaScript</h4>
+        <pre data-lang="HTML"><code><span class="tag">&lt;button <span class="attr">onclick</span>=<span class="val">"alert('Hello!')"</span>&gt;</span><span class="text-node">Click Me</span><span class="tag">&lt;/button&gt;</span></code></pre>
+
+        <h4>2. Internal JavaScript</h4>
+        <pre data-lang="HTML"><code><span class="tag">&lt;script&gt;</span>
+  console.log("Hello from JavaScript!");
+<span class="tag">&lt;/script&gt;</span></code></pre>
+
+        <h4>3. External JavaScript (Recommended)</h4>
+        <pre data-lang="HTML"><code><span class="tag">&lt;script <span class="attr">src</span>=<span class="val">"script.js"</span>&gt;&lt;/script&gt;</span></code></pre>
+
+        <div class="info-box info-tip">
+          <span class="icon">✅</span>
+          <div class="content">
+            <strong>Best Practice</strong>
+            <p>
+              Always place your <code>&lt;script&gt;</code> tags just before the closing 
+              <code>&lt;/body&gt;</code> tag, or use the <code>defer</code> attribute. 
+              This ensures the HTML loads before JavaScript tries to manipulate it.
+            </p>
+          </div>
+        </div>
+
+        <h3>Your First JavaScript Program</h3>
+        <p>Create an HTML file with the following:</p>
+        <pre data-lang="HTML"><code><span class="tag">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html&gt;</span>
+  <span class="tag">&lt;head&gt;</span>
+    <span class="tag">&lt;title&gt;</span><span class="text-node">My First JavaScript</span><span class="tag">&lt;/title&gt;</span>
+  <span class="tag">&lt;/head&gt;</span>
+  <span class="tag">&lt;body&gt;</span>
+    <span class="tag">&lt;h1&gt;</span><span class="text-node">Hello JavaScript!</span><span class="tag">&lt;/h1&gt;</span>
+    
+    <span class="tag">&lt;script&gt;</span>
+      alert("Welcome to JavaScript!");
+      console.log("Check the browser console!");
+    <span class="tag">&lt;/script&gt;</span>
+  <span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></code></pre>
+
+        <hr class="section-divider" />
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 1.1</div>
+          <h5>Set Up Your JavaScript Environment</h5>
+          <ol>
+            <li>Create a folder called <strong>javascript-course</strong></li>
+            <li>Inside it, create <strong>lesson1.html</strong></li>
+            <li>Add the HTML boilerplate and a <code>&lt;script&gt;</code> tag</li>
+            <li>Write <code>console.log("Hello, World!");</code> inside the script</li>
+            <li>Open the file in your browser and open the Developer Console (F12 or Right-click → Inspect → Console)</li>
+            <li>Verify you see "Hello, World!" in the console</li>
+          </ol>
+        </div>
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 1.2</div>
+          <h5>Three Ways to Add JavaScript</h5>
+          <ol>
+            <li>Create a button with inline JavaScript that shows an alert</li>
+            <li>Add an internal <code>&lt;script&gt;</code> that logs a message to the console</li>
+            <li>Create an external file <strong>script.js</strong> with <code>alert("External JS works!");</code></li>
+            <li>Link the external file to your HTML</li>
+            <li>Test all three methods work correctly</li>
+          </ol>
+        </div>
+
+        <div class="exercise-block assessment">
+          <div class="block-label">📝 Assessment 1</div>
+          <h5>Chapter 1 Knowledge Check</h5>
+          <ol>
+            <li>What is JavaScript and what role does it play in web development?</li>
+            <li>Who created JavaScript and in what year?</li>
+            <li>Name three things JavaScript can do on a webpage.</li>
+            <li>What are the three ways to include JavaScript in an HTML page?</li>
+            <li>Where is the best place to put a <code>&lt;script&gt;</code> tag and why?</li>
+            <li><strong>Practical:</strong> Create an HTML page that displays your name in an <code>&lt;h1&gt;</code> 
+            and uses JavaScript to show an alert with a welcome message when the page loads.</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════
+       LESSON 2 — JAVASCRIPT LANGUAGE AND SYNTAX
+  ══════════════════════════════ -->
+      <section class="lesson" id="syntax">
+        <div class="lesson-header">
+          <div class="lesson-num">Lesson 02</div>
+          <div class="lesson-title-group">
+            <h2>JavaScript Language and Syntax</h2>
+            <span class="subtitle">Understanding the rules and structure</span>
+          </div>
+        </div>
+
+        <h3>JavaScript Statements</h3>
+        <p>
+          A <strong>statement</strong> is a single instruction that tells the computer to do something. 
+          Statements end with a semicolon <code>;</code> (optional but recommended).
+        </p>
+        <pre data-lang="JavaScript"><code>console.log("This is a statement");
+alert("This is another statement");
+let x = 5; // Variable declaration statement</code></pre>
+
+        <h3>Comments</h3>
+        <p>Comments are notes for developers that JavaScript ignores.</p>
+        <pre data-lang="JavaScript"><code>// This is a single-line comment
+
+/* 
+  This is a 
+  multi-line comment
+*/
+
+let age = 25; // Inline comment after code</code></pre>
+
+        <h3>Case Sensitivity</h3>
+        <p>JavaScript is <strong>case-sensitive</strong>. <code>myVariable</code>, <code>MyVariable</code>, 
+        and <code>MYVARIABLE</code> are three different identifiers.</p>
+        <pre data-lang="JavaScript"><code>let name = "John";
+let Name = "Jane";  // Different variable!
+console.log(name);  // "John"
+console.log(Name);  // "Jane"</code></pre>
+
+        <h3>Naming Conventions</h3>
+        <p>Follow these rules when naming variables and functions:</p>
+        <ul>
+          <li>Must start with a letter, underscore (_), or dollar sign ($)</li>
+          <li>Cannot start with a number</li>
+          <li>Cannot use reserved keywords (let, if, function, etc.)</li>
+          <li>Use camelCase for variables: <code>firstName</code>, <code>totalPrice</code></li>
+          <li>Use PascalCase for classes: <code>UserProfile</code>, <code>ShoppingCart</code></li>
+          <li>Use UPPERCASE for constants: <code>MAX_SIZE</code>, <code>API_KEY</code></li>
+        </ul>
+
+        <pre data-lang="JavaScript"><code>// ✅ Valid names
+let firstName = "Amara";
+let _privateVar = 10;
+let $element = document.querySelector("div");
+let user2 = "Chidi";
+
+// ❌ Invalid names
+let 2users = 5;      // Cannot start with number
+let my-name = "Ada"; // Hyphens not allowed
+let let = 10;        // 'let' is a reserved keyword</code></pre>
+
+        <h3>JavaScript Keywords</h3>
+        <p>These words are reserved and cannot be used as variable names:</p>
+        <pre data-lang="JavaScript"><code>break, case, catch, class, const, continue, debugger, 
+default, delete, do, else, export, extends, finally, 
+for, function, if, import, in, instanceof, let, new, 
+return, super, switch, this, throw, try, typeof, var, 
+void, while, with, yield</code></pre>
+
+        <h3>Whitespace and Formatting</h3>
+        <p>JavaScript ignores extra spaces, tabs, and line breaks. Use them to make code readable.</p>
+        <pre data-lang="JavaScript"><code>// Both are valid, but the second is more readable
+let x=5;let y=10;let z=x+y;
+
+let x = 5;
+let y = 10;
+let z = x + y;</code></pre>
+
+        <div class="info-box info-note">
+          <span class="icon">💡</span>
+          <div class="content">
+            <strong>Good to Know</strong>
+            <p>
+              Modern JavaScript uses <code>let</code> and <code>const</code> instead of <code>var</code>. 
+              We'll cover the differences in the next chapter.
+            </p>
+          </div>
+        </div>
+
+        <hr class="section-divider" />
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 2.1</div>
+          <h5>Spot the Syntax Errors</h5>
+          <p>Find and fix all the errors in this code:</p>
+          <pre data-lang="JavaScript"><code>let 1stName = "John"
+Let age = 25;
+let my-city = "Lagos";
+console.log(firstname);</code></pre>
+        </div>
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 2.2</div>
+          <h5>Practice Naming Conventions</h5>
+          <ol>
+            <li>Create variables for: user's first name, last name, age, and email using camelCase</li>
+            <li>Create a constant for the maximum login attempts (use UPPERCASE)</li>
+            <li>Add comments explaining what each variable stores</li>
+            <li>Log all variables to the console</li>
+          </ol>
+        </div>
+
+        <div class="exercise-block assessment">
+          <div class="block-label">📝 Assessment 2</div>
+          <h5>Chapter 2 Knowledge Check</h5>
+          <ol>
+            <li>What is a JavaScript statement?</li>
+            <li>What are the two types of comments in JavaScript?</li>
+            <li>Is JavaScript case-sensitive? Give an example.</li>
+            <li>What are the rules for naming variables in JavaScript?</li>
+            <li>What naming convention should you use for regular variables?</li>
+            <li><strong>Practical:</strong> Write a JavaScript program with at least 5 properly named variables, 
+            include both single-line and multi-line comments, and log all variables to the console.</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════
+       LESSON 3 — DOCUMENT AND BROWSER OBJECT MODELS
+  ══════════════════════════════ -->
+      <section class="lesson" id="dom">
+        <div class="lesson-header">
+          <div class="lesson-num">Lesson 03</div>
+          <div class="lesson-title-group">
+            <h2>Document and Browser Object Models</h2>
+            <span class="subtitle">Interacting with the webpage and browser</span>
+          </div>
+        </div>
+
+        <h3>What is the DOM?</h3>
+        <p>
+          The <strong>Document Object Model (DOM)</strong> is a programming interface that represents 
+          the HTML document as a tree of objects. JavaScript can access and manipulate these objects 
+          to change content, structure, and styling dynamically.
+        </p>
+
+        <h3>Selecting Elements</h3>
+        <pre data-lang="JavaScript"><code>// Select by ID
+let heading = document.getElementById("main-title");
+
+// Select by class name (returns HTMLCollection)
+let cards = document.getElementsByClassName("card");
+
+// Select by tag name
+let paragraphs = document.getElementsByTagName("p");
+
+// Select using CSS selectors (modern approach)
+let firstCard = document.querySelector(".card");      // First match
+let allCards = document.querySelectorAll(".card");    // All matches</code></pre>
+
+        <h3>Manipulating Content</h3>
+        <pre data-lang="JavaScript"><code>// Change text content
+document.getElementById("demo").textContent = "New text";
+
+// Change HTML content
+document.getElementById("demo").innerHTML = "&lt;strong&gt;Bold text&lt;/strong&gt;";
+
+// Change attributes
+let img = document.querySelector("img");
+img.src = "new-image.jpg";
+img.alt = "New description";
+
+// Change styles
+let box = document.querySelector(".box");
+box.style.color = "red";
+box.style.backgroundColor = "yellow";
+box.style.fontSize = "20px";</code></pre>
+
+        <h3>Creating and Removing Elements</h3>
+        <pre data-lang="JavaScript"><code>// Create new element
+let newParagraph = document.createElement("p");
+newParagraph.textContent = "This is a new paragraph";
+document.body.appendChild(newParagraph);
+
+// Remove element
+let oldElement = document.getElementById("old");
+oldElement.remove();
+
+// Or remove child from parent
+let parent = document.getElementById("container");
+let child = document.getElementById("item");
+parent.removeChild(child);</code></pre>
+
+        <h3>The Browser Object Model (BOM)</h3>
+        <p>The <strong>BOM</strong> allows JavaScript to interact with the browser itself.</p>
+        <pre data-lang="JavaScript"><code>// Window object (global object in browsers)
+window.alert("Hello!");
+window.confirm("Are you sure?");
+window.prompt("Enter your name:");
+
+// Get window dimensions
+let width = window.innerWidth;
+let height = window.innerHeight;
+
+// Navigate to new page
+window.location.href = "https://example.com";
+
+// Reload page
+window.location.reload();
+
+// Browser history
+window.history.back();    // Go back
+window.history.forward(); // Go forward
+
+// Timers
+setTimeout(() => {
+  console.log("Runs after 2 seconds");
+}, 2000);
+
+setInterval(() => {
+  console.log("Runs every 3 seconds");
+}, 3000);</code></pre>
+
+        <table class="ref-table">
+          <tr>
+            <th>Method</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td><code>getElementById()</code></td>
+            <td>Select element by ID attribute</td>
+          </tr>
+          <tr>
+            <td><code>getElementsByClassName()</code></td>
+            <td>Select elements by class name</td>
+          </tr>
+          <tr>
+            <td><code>querySelector()</code></td>
+            <td>Select first element matching CSS selector</td>
+          </tr>
+          <tr>
+            <td><code>querySelectorAll()</code></td>
+            <td>Select all elements matching CSS selector</td>
+          </tr>
+          <tr>
+            <td><code>createElement()</code></td>
+            <td>Create a new HTML element</td>
+          </tr>
+          <tr>
+            <td><code>appendChild()</code></td>
+            <td>Add child element to parent</td>
+          </tr>
+          <tr>
+            <td><code>remove()</code></td>
+            <td>Remove element from DOM</td>
+          </tr>
+        </table>
+
+        <div class="info-box info-warn">
+          <span class="icon">⚠️</span>
+          <div class="content">
+            <strong>Common Mistake</strong>
+            <p>
+              Always ensure the DOM is fully loaded before trying to manipulate it. 
+              Place your scripts at the end of the body, or use <code>DOMContentLoaded</code> event.
+            </p>
+          </div>
+        </div>
+
+        <hr class="section-divider" />
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 3.1</div>
+          <h5>DOM Manipulation Practice</h5>
+          <ol>
+            <li>Create an HTML page with an <code>&lt;h1 id="title"&gt;</code> and a <code>&lt;p id="text"&gt;</code></li>
+            <li>Use JavaScript to change the h1 text to "DOM Manipulation"</li>
+            <li>Change the paragraph text to "JavaScript is powerful!"</li>
+            <li>Change the h1 color to blue and font size to 40px</li>
+            <li>Create a new paragraph and append it to the body</li>
+          </ol>
+        </div>
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 3.2</div>
+          <h5>Browser Object Model</h5>
+          <ol>
+            <li>Create a button that shows an alert when clicked</li>
+            <li>Create a button that asks for the user's name using <code>prompt()</code> and displays it on the page</li>
+            <li>Log the current window width and height to the console</li>
+            <li>Create a button that redirects to Google after confirming with the user</li>
+          </ol>
+        </div>
+
+        <div class="exercise-block assessment">
+          <div class="block-label">📝 Assessment 3</div>
+          <h5>Chapter 3 Knowledge Check</h5>
+          <ol>
+            <li>What is the DOM and why is it important?</li>
+            <li>What is the difference between <code>textContent</code> and <code>innerHTML</code>?</li>
+            <li>What is the difference between <code>querySelector()</code> and <code>querySelectorAll()</code>?</li>
+            <li>Name three properties or methods of the <code>window</code> object.</li>
+            <li>How do you create and add a new element to the page?</li>
+            <li><strong>Practical:</strong> Create a page with a heading, paragraph, and button. 
+            When the button is clicked, change the heading text, change the paragraph color to red, 
+            and create a new div with some text that gets appended to the body.</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Continue with remaining lessons... -->
+    </main>
+
+    <button
+      id="scrolltop"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+      title="Back to top"
+    >
+      ↑
+    </button>
+
+    <script>
+      // Progress bar
+      const progress = document.getElementById("progress");
+      window.addEventListener("scroll", () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        progress.style.width = (scrollTop / docHeight) * 100 + "%";
+
+        // Scroll to top button
+        document
+          .getElementById("scrolltop")
+          .classList.toggle("visible", scrollTop > 400);
+
+        // Active nav link
+        const sections = document.querySelectorAll(".lesson");
+        const links = document.querySelectorAll(".nav-link");
+        sections.forEach((s, i) => {
+          const rect = s.getBoundingClientRect();
+          if (rect.top <= 200 && rect.bottom >= 200) {
+            links.forEach((l) => l.classList.remove("active"));
+            if (links[i]) links[i].classList.add("active");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
