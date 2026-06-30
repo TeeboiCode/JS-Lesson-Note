@@ -1,0 +1,201 @@
+      <!-- LESSON 09 — TODO LIST PROJECT -->
+      <section class="lesson" id="todo">
+        <div class="lesson-header">
+          <div class="lesson-num">Lesson 09</div>
+          <div class="lesson-title-group">
+            <h2>Todo List Project</h2>
+            <span class="subtitle">Console-only app using prompt, alert, and arrays</span>
+          </div>
+        </div>
+
+        <h3>Project Overview</h3>
+        <p>
+          Build a fully working Todo app using <strong>only JavaScript</strong> — no HTML manipulation required.
+          Commands: <code>add</code>, <code>list</code>, <code>delete</code>, <code>quit</code>.
+          This project combines variables, arrays, strings, conditionals, and loops.
+        </p>
+
+        <h3>Starter Structure</h3>
+        <pre data-lang="JavaScript"><code>let todos = [];
+let running = true;
+
+alert("Welcome to Todo App!\nCommands: add, list, delete, quit");
+
+while (running) {
+  let command = prompt("Enter command (add / list / delete / quit):");
+
+  if (command === null) {
+    alert("Goodbye!");
+    break;
+  }
+
+  command = command.toLowerCase().trim();
+
+  // Handle each command here with if / else if
+}</code></pre>
+
+        <h3>Full Solution</h3>
+        <details class="code-answer">
+          <summary>View Full Code</summary>
+          <pre data-lang="JavaScript"><code>let todos = [];
+let running = true;
+
+alert("Welcome to Todo App!\nCommands: add, list, delete, quit");
+
+while (running) {
+  let command = prompt("Enter command (add / list / delete / quit):");
+
+  if (command === null) {
+    alert("Goodbye!");
+    break;
+  }
+
+  command = command.toLowerCase().trim();
+
+  if (command === "add") {
+    let task = prompt("Enter task to add:");
+    if (task && task.trim() !== "") {
+      todos.push(task.trim());
+      alert("Task added!");
+      console.log("Added:", task);
+    } else {
+      alert("Task cannot be empty.");
+    }
+
+  } else if (command === "list") {
+    if (todos.length === 0) {
+      alert("No tasks yet.");
+      console.log("Todo list is empty.");
+    } else {
+      let list = "Your Tasks:\n";
+      for (let i = 0; i < todos.length; i++) {
+        list += (i + 1) + ". " + todos[i] + "\n";
+      }
+      alert(list);
+      console.log(list);
+    }
+
+  } else if (command === "delete") {
+    if (todos.length === 0) {
+      alert("Nothing to delete.");
+    } else {
+      let list = "Which task to delete?\n";
+      for (let i = 0; i < todos.length; i++) {
+        list += (i + 1) + ". " + todos[i] + "\n";
+      }
+      let index = prompt(list + "Enter number:");
+      let num = Number(index);
+
+      if (num >= 1 && num <= todos.length) {
+        let removed = todos.splice(num - 1, 1);
+        alert("Deleted: " + removed[0]);
+        console.log("Deleted:", removed[0]);
+      } else {
+        alert("Invalid number.");
+      }
+    }
+
+  } else if (command === "quit") {
+    alert("Thanks for using Todo App!");
+    running = false;
+
+  } else {
+    alert("Unknown command. Use: add, list, delete, quit");
+  }
+}</code></pre>
+        </details>
+
+        <h3>Concepts Used</h3>
+        <ul>
+          <li><strong>Variables:</strong> <code>todos</code> array, <code>running</code> flag</li>
+          <li><strong>Arrays:</strong> push, splice, length, indexing</li>
+          <li><strong>Conditionals:</strong> if / else if / else chains</li>
+          <li><strong>Loops:</strong> while for the app, for to display list</li>
+          <li><strong>I/O:</strong> prompt, alert, console.log</li>
+          <li><strong>Strings:</strong> trim, toLowerCase, concatenation</li>
+        </ul>
+
+        <hr class="section-divider" />
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 9.1</div>
+          <h5>Build It Yourself</h5>
+          <ol>
+            <li>Create <code>todo.js</code> and link it to a blank HTML page</li>
+            <li>Implement all four commands without looking at the solution</li>
+            <li>Test: add 3 tasks, list them, delete one, list again, quit</li>
+          </ol>
+        </div>
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 9.2</div>
+          <h5>Enhancements (Optional)</h5>
+          <ol>
+            <li>Add an <code>edit</code> command to change a task by number</li>
+            <li>Add a <code>clear</code> command to remove all tasks</li>
+            <li>Refactor repeated "display list" code into a function</li>
+          </ol>
+        </div>
+
+        <div class="exercise-block quiz" data-quiz-id="todo">
+          <div class="block-label">🎯 Quiz 9</div>
+          <h5>Lesson 9 — Knowledge Check (5 Questions)</h5>
+          <button type="button" class="btn-present-quiz" onclick="presentQuiz(this)">📸 Present Quiz for Screenshot</button>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>1.</strong> Which array method adds a task to the end of the list?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q9t-1" /> push()</label></li>
+              <li><label><input type="radio" name="q9t-1" /> pop()</label></li>
+              <li><label><input type="radio" name="q9t-1" /> splice()</label></li>
+              <li><label><input type="radio" name="q9t-1" /> shift()</label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>2.</strong> Why use a <code>while (running)</code> loop?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q9t-2" /> To keep the app running until the user quits</label></li>
+              <li><label><input type="radio" name="q9t-2" /> To loop through each task in the array once</label></li>
+              <li><label><input type="radio" name="q9t-2" /> To convert strings to numbers automatically</label></li>
+              <li><label><input type="radio" name="q9t-2" /> To prevent the browser from showing alerts</label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>3.</strong> What does <code>command.toLowerCase().trim()</code> do?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q9t-3" /> Normalizes input to lowercase and removes extra spaces</label></li>
+              <li><label><input type="radio" name="q9t-3" /> Converts the command to a number for comparison</label></li>
+              <li><label><input type="radio" name="q9t-3" /> Deletes the command from memory after use</label></li>
+              <li><label><input type="radio" name="q9t-3" /> Splits the command into an array of characters</label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>4.</strong> Which method removes a task at a specific index?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q9t-4" /> splice(index, 1)</label></li>
+              <li><label><input type="radio" name="q9t-4" /> push(index)</label></li>
+              <li><label><input type="radio" name="q9t-4" /> delete todos[index]</label></li>
+              <li><label><input type="radio" name="q9t-4" /> removeAt(index)</label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>5.</strong> Why check <code>command === null</code>?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q9t-5" /> User clicked Cancel on the prompt dialog</label></li>
+              <li><label><input type="radio" name="q9t-5" /> The todos array is empty</label></li>
+              <li><label><input type="radio" name="q9t-5" /> A syntax error occurred in the script</label></li>
+              <li><label><input type="radio" name="q9t-5" /> The while loop reached its limit</label></li>
+            </ul>
+          </div>
+          <details class="quiz-answers">
+            <summary>View Answer Key</summary>
+            <ol>
+              <li><strong>A</strong> — push adds to end.</li>
+              <li><strong>A</strong> — while keeps app alive.</li>
+              <li><strong>A</strong> — normalize user input.</li>
+              <li><strong>A</strong> — splice removes at index.</li>
+              <li><strong>A</strong> — Cancel returns null.</li>
+            </ol>
+          </details>
+        </div>
+      </section>

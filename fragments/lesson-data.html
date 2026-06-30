@@ -1,0 +1,183 @@
+      <!-- LESSON 04 — DATA & TYPES -->
+      <section class="lesson" id="data">
+        <div class="lesson-header">
+          <div class="lesson-num">Lesson 04</div>
+          <div class="lesson-title-group">
+            <h2>Data &amp; Types</h2>
+            <span class="subtitle">Primitive and non-primitive data types</span>
+          </div>
+        </div>
+
+        <h3>What Is Data?</h3>
+        <p><strong>Data</strong> is any value your program works with — a name, age, price, or login status. Every value in JavaScript has a <strong>type</strong> that tells the engine how to store and use it.</p>
+
+        <h3>Two Categories</h3>
+        <table class="ref-table">
+          <tr><th>Category</th><th>Types</th><th>Stored</th></tr>
+          <tr><td><strong>Primitive</strong></td><td>String, Number, Boolean, null, undefined, Symbol, BigInt</td><td>By value</td></tr>
+          <tr><td><strong>Non-Primitive</strong></td><td>Object, Array, Function</td><td>By reference</td></tr>
+        </table>
+
+        <h3>String</h3>
+        <p>Text wrapped in quotes. Three ways to create strings:</p>
+        <pre data-lang="JavaScript"><code>let a = "double quotes";
+let b = 'single quotes';
+let c = `backticks (template literals)`;
+
+// Concatenation
+let first = "Ada";
+let last = "Okafor";
+let full = first + " " + last;           // "Ada Okafor"
+let greeting = `Hello, ${first}!`;      // "Hello, Ada!"
+
+// Length and index (starts at 0)
+console.log(full.length);   // 10
+console.log(full[0]);       // "A"
+console.log(full[4]);       // "O"
+
+// Escape characters
+let quote = "She said, \"Hello!\"";   // quotes inside
+let path = "C:\\Users\\Desktop";      // backslash
+let lines = "Line 1\nLine 2";         // new line
+let tab = "Name\tAge";                // tab</code></pre>
+
+        <h3>Number</h3>
+        <pre data-lang="JavaScript"><code>let age = 25;
+let price = 99.99;
+
+console.log(10 + 3);   // 13  addition
+console.log(10 - 3);   // 7   subtraction
+console.log(10 * 3);   // 30  multiplication
+console.log(10 / 3);   // 3.333... division
+console.log(10 % 3);   // 1   modulus (remainder)
+
+// Modulus use cases
+console.log(10 % 2 === 0);  // true → even
+console.log(7 % 2 === 1);   // true → odd</code></pre>
+
+        <h3>Boolean</h3>
+        <pre data-lang="JavaScript"><code>let isLoggedIn = true;
+let hasPermission = false;
+let isAdult = age >= 18;  // evaluates to true or false</code></pre>
+
+        <h3>null and undefined</h3>
+        <pre data-lang="JavaScript"><code>let selectedUser = null;    // intentionally empty
+let username;               // undefined — not assigned yet
+console.log(username);      // undefined</code></pre>
+        <p><code>null</code> = you set it empty. <code>undefined</code> = JavaScript hasn't given it a value yet.</p>
+
+        <h3>Symbol &amp; BigInt (Brief)</h3>
+        <pre data-lang="JavaScript"><code>// Symbol — unique identifier (advanced use)
+const id = Symbol("id");
+const id2 = Symbol("id");
+console.log(id === id2);  // false
+
+// BigInt — very large integers (note the 'n' suffix)
+const big = 9007199254740991n;
+console.log(big + 1n);</code></pre>
+
+        <h3>Non-Primitive Types</h3>
+        <pre data-lang="JavaScript"><code>// Object — labeled key-value data
+const person = { name: "Chidi", age: 22 };
+
+// Array — ordered list (arrays are objects)
+const scores = [85, 90, 78];
+
+// Function — reusable callable code
+function greet(name) {
+  return "Hello, " + name;
+}</code></pre>
+        <p>Primitives are copied by value. Objects, arrays, and functions are copied by <strong>reference</strong>.</p>
+
+        <h3>typeof Operator</h3>
+        <pre data-lang="JavaScript"><code>console.log(typeof "hello");    // "string"
+console.log(typeof 42);         // "number"
+console.log(typeof true);       // "boolean"
+console.log(typeof undefined);  // "undefined"
+console.log(typeof null);       // "object" (known quirk!)
+console.log(typeof {});         // "object"</code></pre>
+
+        <hr class="section-divider" />
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 4.1</div>
+          <h5>Type Detective</h5>
+          <ol>
+            <li>Create one variable of each primitive type (string, number, boolean, null, undefined)</li>
+            <li>Log each value and its <code>typeof</code> result</li>
+            <li>Create an object and an array — log their types</li>
+          </ol>
+        </div>
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 4.2</div>
+          <h5>String Practice</h5>
+          <ol>
+            <li>Create a full name using concatenation and template literals</li>
+            <li>Log the length and the first and last character using index</li>
+            <li>Create a string with escaped quotes and a new line</li>
+          </ol>
+        </div>
+
+        <div class="exercise-block quiz" data-quiz-id="data">
+          <div class="block-label">🎯 Quiz 4</div>
+          <h5>Lesson 4 — Knowledge Check (5 Questions)</h5>
+          <button type="button" class="btn-present-quiz" onclick="presentQuiz(this)">📸 Present Quiz for Screenshot</button>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>1.</strong> Which is a primitive data type?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q4d-1" /> String</label></li>
+              <li><label><input type="radio" name="q4d-1" /> Array</label></li>
+              <li><label><input type="radio" name="q4d-1" /> Object</label></li>
+              <li><label><input type="radio" name="q4d-1" /> Function</label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>2.</strong> What is the result of <code>10 % 3</code>?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q4d-2" /> 1</label></li>
+              <li><label><input type="radio" name="q4d-2" /> 3</label></li>
+              <li><label><input type="radio" name="q4d-2" /> 3.33</label></li>
+              <li><label><input type="radio" name="q4d-2" /> 0</label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>3.</strong> What does <code>typeof null</code> return?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q4d-3" /> "object"</label></li>
+              <li><label><input type="radio" name="q4d-3" /> "null"</label></li>
+              <li><label><input type="radio" name="q4d-3" /> "undefined"</label></li>
+              <li><label><input type="radio" name="q4d-3" /> "boolean"</label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>4.</strong> What index is the first character in a string?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q4d-4" /> 0</label></li>
+              <li><label><input type="radio" name="q4d-4" /> 1</label></li>
+              <li><label><input type="radio" name="q4d-4" /> -1</label></li>
+              <li><label><input type="radio" name="q4d-4" /> Depends on length</label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>5.</strong> What is the difference between <code>null</code> and <code>undefined</code>?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q4d-5" /> null is intentional empty; undefined means not yet assigned</label></li>
+              <li><label><input type="radio" name="q4d-5" /> undefined is intentional empty; null means not yet assigned</label></li>
+              <li><label><input type="radio" name="q4d-5" /> They are identical and interchangeable</label></li>
+              <li><label><input type="radio" name="q4d-5" /> null is for numbers; undefined is for strings</label></li>
+            </ul>
+          </div>
+          <details class="quiz-answers">
+            <summary>View Answer Key</summary>
+            <ol>
+              <li><strong>A</strong> — String is primitive.</li>
+              <li><strong>A</strong> — 10 % 3 = 1 (remainder).</li>
+              <li><strong>A</strong> — typeof null is "object" (quirk).</li>
+              <li><strong>A</strong> — Strings are zero-indexed.</li>
+              <li><strong>A</strong> — null vs undefined distinction.</li>
+            </ol>
+          </details>
+        </div>
+      </section>

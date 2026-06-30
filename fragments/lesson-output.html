@@ -1,0 +1,133 @@
+      <!-- LESSON 03 — OUTPUT METHODS -->
+      <section class="lesson" id="output">
+        <div class="lesson-header">
+          <div class="lesson-num">Lesson 03</div>
+          <div class="lesson-title-group">
+            <h2>Output &amp; Input Methods</h2>
+            <span class="subtitle">alert, prompt, and console.log — your first tools</span>
+          </div>
+        </div>
+
+        <h3>Three Ways to Communicate</h3>
+        <p>Before building web pages, you need to see results and get user input. JavaScript gives you three essential tools:</p>
+        <table class="ref-table">
+          <tr><th>Method</th><th>Purpose</th><th>Returns</th></tr>
+          <tr><td><code>alert()</code></td><td>Show a popup message</td><td><code>undefined</code></td></tr>
+          <tr><td><code>prompt()</code></td><td>Ask user to type something</td><td>String or <code>null</code></td></tr>
+          <tr><td><code>console.log()</code></td><td>Print to Developer Console</td><td><code>undefined</code></td></tr>
+        </table>
+
+        <h3>alert() — Show a Message</h3>
+        <pre data-lang="JavaScript"><code>alert("Welcome to JavaScript class!");
+alert("Your score is: " + 95);</code></pre>
+        <p>Opens a blocking popup. The user must click OK before the page continues.</p>
+
+        <h3>prompt() — Get User Input</h3>
+        <pre data-lang="JavaScript"><code>let name = prompt("What is your name?");
+alert("Hello, " + name + "!");
+
+let age = prompt("How old are you?");
+console.log("Age entered:", age);
+console.log("Type of age:", typeof age); // always "string"!</code></pre>
+        <p><code>prompt()</code> always returns a <strong>string</strong> (or <code>null</code> if Cancel is clicked). Convert with <code>Number()</code> when doing math.</p>
+
+        <h3>console.log() — Developer Console</h3>
+        <pre data-lang="JavaScript"><code>console.log("Hello, World!");
+console.log("Name:", name, "Age:", age);
+console.log(10 + 5);
+console.log({ name: "Ada", score: 90 });</code></pre>
+        <p>Open the console: <strong>F12</strong> → Console tab (or Right-click → Inspect → Console). This is where developers debug code daily.</p>
+
+        <div class="info-box info-tip">
+          <span class="icon">✅</span>
+          <div class="content">
+            <strong>Instructor Tip</strong>
+            <p>Use <code>console.log</code> for practice and debugging. Use <code>alert</code> and <code>prompt</code> for beginner projects like our Todo app — they give immediate visual feedback.</p>
+          </div>
+        </div>
+
+        <hr class="section-divider" />
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 3.1</div>
+          <h5>Greeting Program</h5>
+          <ol>
+            <li>Use <code>prompt</code> to ask for the user's name and favourite colour</li>
+            <li>Log both values to the console with labels</li>
+            <li>Show an <code>alert</code> saying: "Hi [name], I see you like [colour]!"</li>
+          </ol>
+        </div>
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 3.2</div>
+          <h5>Mini Calculator</h5>
+          <ol>
+            <li>Prompt for two numbers (remember to convert with <code>Number()</code>)</li>
+            <li>Log the sum, difference, product, and quotient to the console</li>
+            <li>Alert the user with the sum result</li>
+          </ol>
+        </div>
+
+        <div class="exercise-block quiz" data-quiz-id="output">
+          <div class="block-label">🎯 Quiz 3</div>
+          <h5>Lesson 3 — Knowledge Check (5 Questions)</h5>
+          <p>Select the best answer. Options are designed to look similar — read carefully.</p>
+          <button type="button" class="btn-present-quiz" onclick="presentQuiz(this)">📸 Present Quiz for Screenshot</button>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>1.</strong> What does <code>alert()</code> do?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q3o-1" /> Displays a popup message and waits for OK</label></li>
+              <li><label><input type="radio" name="q3o-1" /> Prints output silently to the Developer Console</label></li>
+              <li><label><input type="radio" name="q3o-1" /> Opens a text field for the user to type input</label></li>
+              <li><label><input type="radio" name="q3o-1" /> Sends a message to the web server</label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>2.</strong> What type does <code>prompt()</code> return when the user types a number?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q3o-2" /> Always a string</label></li>
+              <li><label><input type="radio" name="q3o-2" /> Always a number</label></li>
+              <li><label><input type="radio" name="q3o-2" /> A boolean true or false</label></li>
+              <li><label><input type="radio" name="q3o-2" /> undefined unless converted</label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>3.</strong> Where do you see <code>console.log()</code> output?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q3o-3" /> Browser Developer Tools → Console tab</label></li>
+              <li><label><input type="radio" name="q3o-3" /> Browser Developer Tools → Network tab</label></li>
+              <li><label><input type="radio" name="q3o-3" /> In a popup alert box on the page</label></li>
+              <li><label><input type="radio" name="q3o-3" /> In the HTML source code of the page</label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>4.</strong> What does <code>prompt()</code> return if the user clicks Cancel?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q3o-4" /> <code>null</code></label></li>
+              <li><label><input type="radio" name="q3o-4" /> <code>undefined</code></label></li>
+              <li><label><input type="radio" name="q3o-4" /> An empty string <code>""</code></label></li>
+              <li><label><input type="radio" name="q3o-4" /> <code>false</code></label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>5.</strong> How do you convert prompt input to a number for math?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q3o-5" /> <code>Number(userInput)</code> or <code>parseInt(userInput)</code></label></li>
+              <li><label><input type="radio" name="q3o-5" /> <code>String(userInput)</code> or <code>toString()</code></label></li>
+              <li><label><input type="radio" name="q3o-5" /> <code>Boolean(userInput)</code> or <code>!!userInput</code></label></li>
+              <li><label><input type="radio" name="q3o-5" /> <code>Array(userInput)</code> or <code>split()</code></label></li>
+            </ul>
+          </div>
+          <details class="quiz-answers">
+            <summary>View Answer Key</summary>
+            <ol>
+              <li><strong>A</strong> — alert shows a popup.</li>
+              <li><strong>A</strong> — prompt always returns a string.</li>
+              <li><strong>A</strong> — Console tab shows log output.</li>
+              <li><strong>A</strong> — Cancel returns null.</li>
+              <li><strong>A</strong> — Number() or parseInt() converts to number.</li>
+            </ol>
+          </details>
+        </div>
+      </section>

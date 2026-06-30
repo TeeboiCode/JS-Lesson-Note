@@ -1,0 +1,152 @@
+      <!-- LESSON 06 — BOOLEAN LOGIC -->
+      <section class="lesson" id="boolean">
+        <div class="lesson-header">
+          <div class="lesson-num">Lesson 06</div>
+          <div class="lesson-title-group">
+            <h2>Boolean Logic</h2>
+            <span class="subtitle">True, false, comparisons, and truthy values</span>
+          </div>
+        </div>
+
+        <h3>True, False and Beyond</h3>
+        <p>Booleans represent yes/no decisions. But JavaScript also treats <em>any</em> value as truthy or falsy inside conditions like <code>if (value)</code>.</p>
+
+        <h3>Comparison Operators</h3>
+        <pre data-lang="JavaScript"><code>5 > 3    // true   greater than
+5 < 3    // false  less than
+5 >= 5   // true   greater or equal
+5 <= 4   // false  less or equal
+5 === 5  // true   strict equal (value AND type)
+5 !== 3  // true   strict not equal
+5 == "5" // true   loose equal (avoid!)
+5 === "5" // false strict — different types</code></pre>
+
+        <div class="info-box info-warn">
+          <span class="icon">⚠️</span>
+          <div class="content">
+            <strong>Golden Rule</strong>
+            <p>Always use <code>===</code> and <code>!==</code>. Loose equality (<code>==</code>) causes subtle bugs.</p>
+          </div>
+        </div>
+
+        <h3>Logical Operators: AND, OR, NOT</h3>
+        <pre data-lang="JavaScript"><code>true && true   // AND → true
+true && false  // AND → false
+true || false  // OR  → true
+false || false // OR  → false
+!true          // NOT → false
+!false         // NOT → true
+
+let isAdult = age >= 18;
+let hasTicket = true;
+let canEnter = isAdult && hasTicket;
+
+let isWeekend = day === "Sat" || day === "Sun";</code></pre>
+
+        <h3>Truthy and Falsy Values</h3>
+        <p><strong>Falsy values</strong> (only these 6 + false):</p>
+        <ul>
+          <li><code>false</code></li>
+          <li><code>0</code></li>
+          <li><code>""</code> (empty string)</li>
+          <li><code>null</code></li>
+          <li><code>undefined</code></li>
+          <li><code>NaN</code></li>
+        </ul>
+        <p><strong>Everything else is truthy</strong> — including <code>"0"</code>, <code>" "</code>, <code>[]</code>, <code>{}</code>.</p>
+        <pre data-lang="JavaScript"><code>if ("hello") {
+  console.log("Truthy!");  // runs
+}
+if (0) {
+  console.log("Never runs");
+}
+if ("") {
+  console.log("Never runs");
+}</code></pre>
+
+        <hr class="section-divider" />
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 6.1</div>
+          <h5>True or False Predictions</h5>
+          <p>Predict before running in the console:</p>
+          <pre data-lang="JavaScript"><code>console.log(5 > 3 && 10 < 20);
+console.log(5 === "5");
+console.log(0 == false);
+console.log(0 === false);
+console.log("" || "default");
+console.log(null ?? "fallback");</code></pre>
+        </div>
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 6.2</div>
+          <h5>Access Checker</h5>
+          <ol>
+            <li>Store <code>age</code> and <code>hasMembership</code> in variables</li>
+            <li>Use <code>&&</code> and <code>||</code> to check if user can enter (18+ AND member) OR has a guest pass</li>
+            <li>Log the result with a clear message</li>
+          </ol>
+        </div>
+
+        <div class="exercise-block quiz" data-quiz-id="boolean">
+          <div class="block-label">🎯 Quiz 6</div>
+          <h5>Lesson 6 — Knowledge Check (5 Questions)</h5>
+          <button type="button" class="btn-present-quiz" onclick="presentQuiz(this)">📸 Present Quiz for Screenshot</button>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>1.</strong> Which comparison returns <code>true</code>?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q6b-1" /> <code>5 == "5"</code></label></li>
+              <li><label><input type="radio" name="q6b-1" /> <code>5 === "5"</code></label></li>
+              <li><label><input type="radio" name="q6b-1" /> <code>5 !== 5</code></label></li>
+              <li><label><input type="radio" name="q6b-1" /> <code>0 === false</code></label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>2.</strong> What does <code>true && false</code> evaluate to?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q6b-2" /> false</label></li>
+              <li><label><input type="radio" name="q6b-2" /> true</label></li>
+              <li><label><input type="radio" name="q6b-2" /> undefined</label></li>
+              <li><label><input type="radio" name="q6b-2" /> null</label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>3.</strong> Which value is <strong>falsy</strong>?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q6b-3" /> <code>0</code></label></li>
+              <li><label><input type="radio" name="q6b-3" /> <code>"0"</code></label></li>
+              <li><label><input type="radio" name="q6b-3" /> <code>[]</code></label></li>
+              <li><label><input type="radio" name="q6b-3" /> <code>{}</code></label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>4.</strong> What does <code>!true</code> return?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q6b-4" /> false</label></li>
+              <li><label><input type="radio" name="q6b-4" /> true</label></li>
+              <li><label><input type="radio" name="q6b-4" /> 0</label></li>
+              <li><label><input type="radio" name="q6b-4" /> undefined</label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>5.</strong> Which logical operator means "at least one must be true"?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q6b-5" /> <code>||</code> (OR)</label></li>
+              <li><label><input type="radio" name="q6b-5" /> <code>&amp;&amp;</code> (AND)</label></li>
+              <li><label><input type="radio" name="q6b-5" /> <code>!</code> (NOT)</label></li>
+              <li><label><input type="radio" name="q6b-5" /> <code>===</code> (strict equal)</label></li>
+            </ul>
+          </div>
+          <details class="quiz-answers">
+            <summary>View Answer Key</summary>
+            <ol>
+              <li><strong>A</strong> — Loose equality coerces types.</li>
+              <li><strong>A</strong> — AND needs both true.</li>
+              <li><strong>A</strong> — 0 is falsy.</li>
+              <li><strong>A</strong> — NOT flips true to false.</li>
+              <li><strong>A</strong> — OR needs at least one true.</li>
+            </ol>
+          </details>
+        </div>
+      </section>

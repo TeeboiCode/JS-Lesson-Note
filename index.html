@@ -22,30 +22,49 @@
         <h2>JavaScript Complete<br />Lesson Notes</h2>
       </div>
 
-      <div class="nav-section">Chapters</div>
+      <div class="nav-section">Part 1 — JavaScript Core</div>
       <a class="nav-link" href="#intro"
         ><span class="nav-num">01</span> Introduction to JavaScript</a
       >
       <a class="nav-link" href="#syntax"
         ><span class="nav-num">02</span> Language and Syntax</a
       >
-      <a class="nav-link" href="#dom"
-        ><span class="nav-num">03</span> Document & Browser Objects</a
+      <a class="nav-link" href="#output"
+        ><span class="nav-num">03</span> Output: alert, prompt, console</a
       >
-      <a class="nav-link" href="#events"
-        ><span class="nav-num">04</span> Event-driven Programming</a
+      <a class="nav-link" href="#data"
+        ><span class="nav-num">04</span> Data &amp; Types</a
       >
       <a class="nav-link" href="#variables"
-        ><span class="nav-num">05</span> Variables, Operators & Data Types</a
+        ><span class="nav-num">05</span> Variables &amp; Scope</a
       >
-      <a class="nav-link" href="#objects"
-        ><span class="nav-num">06</span> Objects and Arrays</a
-      >
-      <a class="nav-link" href="#control"
-        ><span class="nav-num">07</span> Events, Conditionals & Looping</a
+      <a class="nav-link" href="#boolean"
+        ><span class="nav-num">06</span> Boolean Logic</a
       >
       <a class="nav-link" href="#functions"
-        ><span class="nav-num">08</span> Functions & Form Validation</a
+        ><span class="nav-num">07</span> JavaScript Functions</a
+      >
+      <a class="nav-link" href="#arrays"
+        ><span class="nav-num">08</span> JavaScript Arrays</a
+      >
+      <a class="nav-link" href="#todo"
+        ><span class="nav-num">09</span> Todo List Project</a
+      >
+      <a class="nav-link" href="#control"
+        ><span class="nav-num">10</span> Conditionals &amp; Looping</a
+      >
+      <div class="nav-section">Part 2 — Browser &amp; DOM</div>
+      <a class="nav-link" href="#dom"
+        ><span class="nav-num">11</span> Document &amp; Browser Objects</a
+      >
+      <a class="nav-link" href="#events"
+        ><span class="nav-num">12</span> Event-driven Programming</a
+      >
+      <a class="nav-link" href="#objects"
+        ><span class="nav-num">13</span> Objects &amp; Form Validation</a
+      >
+      <a class="nav-link" href="#study-plan"
+        ><span class="nav-num">★</span> 10-Day Study Plan</a
       >
     </nav>
 
@@ -57,12 +76,13 @@
         <h1>Learn <span>JavaScript</span><br />From Scratch</h1>
         <p>
           A thorough, structured course for absolute beginners. Each chapter
-          includes explanations, code examples, exercises, and an assessment.
+          includes explanations, code examples, hands-on exercises, 5-question
+          quizzes, and a console Todo project — all before DOM.
         </p>
         <div class="hero-meta">
           <div class="meta-item">
             <span class="meta-label">Chapters</span>
-            <span class="meta-value">8</span>
+            <span class="meta-value">13</span>
           </div>
           <div class="meta-item">
             <span class="meta-label">Level</span>
@@ -70,11 +90,11 @@
           </div>
           <div class="meta-item">
             <span class="meta-label">Exercises</span>
-            <span class="meta-value">16</span>
+            <span class="meta-value">26+</span>
           </div>
           <div class="meta-item">
-            <span class="meta-label">Assessments</span>
-            <span class="meta-value">8</span>
+            <span class="meta-label">Quizzes</span>
+            <span class="meta-value">65 Questions</span>
           </div>
         </div>
       </div>
@@ -190,18 +210,72 @@
           </ol>
         </div>
 
-        <div class="exercise-block assessment">
-          <div class="block-label">📝 Assessment 1</div>
-          <h5>Chapter 1 Knowledge Check</h5>
-          <ol>
-            <li>What is JavaScript and what role does it play in web development?</li>
-            <li>Who created JavaScript and in what year?</li>
-            <li>Name three things JavaScript can do on a webpage.</li>
-            <li>What are the three ways to include JavaScript in an HTML page?</li>
-            <li>Where is the best place to put a <code>&lt;script&gt;</code> tag and why?</li>
-            <li><strong>Practical:</strong> Create an HTML page that displays your name in an <code>&lt;h1&gt;</code> 
-            and uses JavaScript to show an alert with a welcome message when the page loads.</li>
-          </ol>
+        <div class="exercise-block quiz">
+          <div class="block-label">🎯 Quiz 1</div>
+          <h5>Lesson 1 — Knowledge Check (5 Questions)</h5>
+          <button type="button" class="btn-present-quiz" onclick="presentQuiz(this)">📸 Present Quiz for Screenshot</button>
+          <p>Select the best answer for each question. Options are designed to look similar — read carefully.</p>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>1.</strong> What role does JavaScript play alongside HTML and CSS on the web?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q1-1" /> Provides structure and semantic markup for pages</label></li>
+              <li><label><input type="radio" name="q1-1" /> Controls colors, fonts, and visual layout of pages</label></li>
+              <li><label><input type="radio" name="q1-1" /> Adds interactivity and dynamic behavior to pages</label></li>
+              <li><label><input type="radio" name="q1-1" /> Manages server databases and file storage for pages</label></li>
+            </ul>
+          </div>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>2.</strong> Who created JavaScript and approximately when?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q1-2" /> Brendan Eich at Netscape in 1995</label></li>
+              <li><label><input type="radio" name="q1-2" /> James Gosling at Sun Microsystems in 1995</label></li>
+              <li><label><input type="radio" name="q1-2" /> Brendan Eich at Microsoft in 2005</label></li>
+              <li><label><input type="radio" name="q1-2" /> Tim Berners-Lee at CERN in 1995</label></li>
+            </ul>
+          </div>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>3.</strong> Which of the following is a valid way to include JavaScript in an HTML page?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q1-3" /> Inline handler, internal &lt;script&gt; block, or external .js file</label></li>
+              <li><label><input type="radio" name="q1-3" /> Inline handler, internal &lt;style&gt; block, or external .css file</label></li>
+              <li><label><input type="radio" name="q1-3" /> Inline handler, internal &lt;script&gt; block, or external .html file</label></li>
+              <li><label><input type="radio" name="q1-3" /> Inline handler, internal &lt;meta&gt; block, or external .js file</label></li>
+            </ul>
+          </div>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>4.</strong> Where is the recommended place to put a &lt;script&gt; tag for DOM manipulation?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q1-4" /> Just before the closing &lt;/body&gt; tag or with the defer attribute</label></li>
+              <li><label><input type="radio" name="q1-4" /> Inside the &lt;head&gt; tag without any attributes</label></li>
+              <li><label><input type="radio" name="q1-4" /> Just after the opening &lt;body&gt; tag before any HTML content</label></li>
+              <li><label><input type="radio" name="q1-4" /> Inside a &lt;noscript&gt; tag at the top of the document</label></li>
+            </ul>
+          </div>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>5.</strong> Which tool lets you see <code>console.log()</code> output while testing JavaScript?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q1-5" /> The browser Developer Tools Console (F12)</label></li>
+              <li><label><input type="radio" name="q1-5" /> The browser Developer Tools Network tab only</label></li>
+              <li><label><input type="radio" name="q1-5" /> The browser Developer Tools Elements panel only</label></li>
+              <li><label><input type="radio" name="q1-5" /> The browser address bar after page load</label></li>
+            </ul>
+          </div>
+
+          <details class="quiz-answers">
+            <summary>View Answer Key</summary>
+            <ol>
+              <li><strong>C</strong> — JavaScript adds interactivity and dynamic behavior.</li>
+              <li><strong>A</strong> — Brendan Eich created JavaScript at Netscape in 1995.</li>
+              <li><strong>A</strong> — Inline, internal script, or external .js file.</li>
+              <li><strong>A</strong> — End of body or defer ensures HTML loads first.</li>
+              <li><strong>A</strong> — The Console tab displays log output.</li>
+            </ol>
+          </details>
         </div>
       </section>
 
@@ -318,18 +392,1639 @@ console.log(firstname);</code></pre>
           </ol>
         </div>
 
-        <div class="exercise-block assessment">
-          <div class="block-label">📝 Assessment 2</div>
-          <h5>Chapter 2 Knowledge Check</h5>
+        <div class="exercise-block quiz">
+          <div class="block-label">🎯 Quiz 2</div>
+          <h5>Lesson 2 — Knowledge Check (5 Questions)</h5>
+          <button type="button" class="btn-present-quiz" onclick="presentQuiz(this)">📸 Present Quiz for Screenshot</button>
+          <p>Select the best answer for each question. Options are designed to look similar — read carefully.</p>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>1.</strong> What is a JavaScript statement?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q2-1" /> A single instruction that tells the computer to perform an action</label></li>
+              <li><label><input type="radio" name="q2-1" /> A comment that explains code to other developers</label></li>
+              <li><label><input type="radio" name="q2-1" /> A variable that stores data for later use</label></li>
+              <li><label><input type="radio" name="q2-1" /> A function that returns a value to the caller</label></li>
+            </ul>
+          </div>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>2.</strong> Which pair correctly describes JavaScript comment syntax?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q2-2" /> <code>//</code> for single-line and <code>/* */</code> for multi-line</label></li>
+              <li><label><input type="radio" name="q2-2" /> <code>#</code> for single-line and <code>--</code> for multi-line</label></li>
+              <li><label><input type="radio" name="q2-2" /> <code>//</code> for multi-line and <code>/* */</code> for single-line</label></li>
+              <li><label><input type="radio" name="q2-2" /> <code>&lt;!-- --&gt;</code> for single-line and <code>//</code> for multi-line</label></li>
+            </ul>
+          </div>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>3.</strong> Given <code>let name = "John";</code> and <code>let Name = "Jane";</code>, what does JavaScript do?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q2-3" /> Treats them as two separate variables because JS is case-sensitive</label></li>
+              <li><label><input type="radio" name="q2-3" /> Treats them as the same variable and overwrites the first value</label></li>
+              <li><label><input type="radio" name="q2-3" /> Throws a syntax error because names differ only by case</label></li>
+              <li><label><input type="radio" name="q2-3" /> Ignores the second declaration and keeps only the first</label></li>
+            </ul>
+          </div>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>4.</strong> Which variable name is <strong>invalid</strong> in JavaScript?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q2-4" /> <code>firstName</code></label></li>
+              <li><label><input type="radio" name="q2-4" /> <code>_privateVar</code></label></li>
+              <li><label><input type="radio" name="q2-4" /> <code>my-city</code></label></li>
+              <li><label><input type="radio" name="q2-4" /> <code>$element</code></label></li>
+            </ul>
+          </div>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>5.</strong> Which naming convention should you use for a regular variable storing a user's age?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q2-5" /> camelCase — e.g. <code>userAge</code></label></li>
+              <li><label><input type="radio" name="q2-5" /> PascalCase — e.g. <code>UserAge</code></label></li>
+              <li><label><input type="radio" name="q2-5" /> UPPERCASE — e.g. <code>USER_AGE</code></label></li>
+              <li><label><input type="radio" name="q2-5" /> kebab-case — e.g. <code>user-age</code></label></li>
+            </ul>
+          </div>
+
+          <details class="quiz-answers">
+            <summary>View Answer Key</summary>
+            <ol>
+              <li><strong>A</strong> — A statement is a single instruction.</li>
+              <li><strong>A</strong> — <code>//</code> and <code>/* */</code> are the comment syntaxes.</li>
+              <li><strong>A</strong> — Case sensitivity makes them different variables.</li>
+              <li><strong>C</strong> — Hyphens are not allowed in identifiers.</li>
+              <li><strong>A</strong> — camelCase is standard for variables.</li>
+            </ol>
+          </details>
+        </div>
+      </section>
+
+      <!-- LESSON 03 — OUTPUT METHODS -->
+      <section class="lesson" id="output">
+        <div class="lesson-header">
+          <div class="lesson-num">Lesson 03</div>
+          <div class="lesson-title-group">
+            <h2>Output &amp; Input Methods</h2>
+            <span class="subtitle">alert, prompt, and console.log — your first tools</span>
+          </div>
+        </div>
+
+        <h3>Three Ways to Communicate</h3>
+        <p>Before building web pages, you need to see results and get user input. JavaScript gives you three essential tools:</p>
+        <table class="ref-table">
+          <tr><th>Method</th><th>Purpose</th><th>Returns</th></tr>
+          <tr><td><code>alert()</code></td><td>Show a popup message</td><td><code>undefined</code></td></tr>
+          <tr><td><code>prompt()</code></td><td>Ask user to type something</td><td>String or <code>null</code></td></tr>
+          <tr><td><code>console.log()</code></td><td>Print to Developer Console</td><td><code>undefined</code></td></tr>
+        </table>
+
+        <h3>alert() — Show a Message</h3>
+        <pre data-lang="JavaScript"><code>alert("Welcome to JavaScript class!");
+alert("Your score is: " + 95);</code></pre>
+        <p>Opens a blocking popup. The user must click OK before the page continues.</p>
+
+        <h3>prompt() — Get User Input</h3>
+        <pre data-lang="JavaScript"><code>let name = prompt("What is your name?");
+alert("Hello, " + name + "!");
+
+let age = prompt("How old are you?");
+console.log("Age entered:", age);
+console.log("Type of age:", typeof age); // always "string"!</code></pre>
+        <p><code>prompt()</code> always returns a <strong>string</strong> (or <code>null</code> if Cancel is clicked). Convert with <code>Number()</code> when doing math.</p>
+
+        <h3>console.log() — Developer Console</h3>
+        <pre data-lang="JavaScript"><code>console.log("Hello, World!");
+console.log("Name:", name, "Age:", age);
+console.log(10 + 5);
+console.log({ name: "Ada", score: 90 });</code></pre>
+        <p>Open the console: <strong>F12</strong> → Console tab (or Right-click → Inspect → Console). This is where developers debug code daily.</p>
+
+        <div class="info-box info-tip">
+          <span class="icon">✅</span>
+          <div class="content">
+            <strong>Instructor Tip</strong>
+            <p>Use <code>console.log</code> for practice and debugging. Use <code>alert</code> and <code>prompt</code> for beginner projects like our Todo app — they give immediate visual feedback.</p>
+          </div>
+        </div>
+
+        <hr class="section-divider" />
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 3.1</div>
+          <h5>Greeting Program</h5>
           <ol>
-            <li>What is a JavaScript statement?</li>
-            <li>What are the two types of comments in JavaScript?</li>
-            <li>Is JavaScript case-sensitive? Give an example.</li>
-            <li>What are the rules for naming variables in JavaScript?</li>
-            <li>What naming convention should you use for regular variables?</li>
-            <li><strong>Practical:</strong> Write a JavaScript program with at least 5 properly named variables, 
-            include both single-line and multi-line comments, and log all variables to the console.</li>
+            <li>Use <code>prompt</code> to ask for the user's name and favourite colour</li>
+            <li>Log both values to the console with labels</li>
+            <li>Show an <code>alert</code> saying: "Hi [name], I see you like [colour]!"</li>
           </ol>
+        </div>
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 3.2</div>
+          <h5>Mini Calculator</h5>
+          <ol>
+            <li>Prompt for two numbers (remember to convert with <code>Number()</code>)</li>
+            <li>Log the sum, difference, product, and quotient to the console</li>
+            <li>Alert the user with the sum result</li>
+          </ol>
+        </div>
+
+        <div class="exercise-block quiz" data-quiz-id="output">
+          <div class="block-label">🎯 Quiz 3</div>
+          <h5>Lesson 3 — Knowledge Check (5 Questions)</h5>
+          <p>Select the best answer. Options are designed to look similar — read carefully.</p>
+          <button type="button" class="btn-present-quiz" onclick="presentQuiz(this)">📸 Present Quiz for Screenshot</button>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>1.</strong> What does <code>alert()</code> do?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q3o-1" /> Displays a popup message and waits for OK</label></li>
+              <li><label><input type="radio" name="q3o-1" /> Prints output silently to the Developer Console</label></li>
+              <li><label><input type="radio" name="q3o-1" /> Opens a text field for the user to type input</label></li>
+              <li><label><input type="radio" name="q3o-1" /> Sends a message to the web server</label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>2.</strong> What type does <code>prompt()</code> return when the user types a number?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q3o-2" /> Always a string</label></li>
+              <li><label><input type="radio" name="q3o-2" /> Always a number</label></li>
+              <li><label><input type="radio" name="q3o-2" /> A boolean true or false</label></li>
+              <li><label><input type="radio" name="q3o-2" /> undefined unless converted</label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>3.</strong> Where do you see <code>console.log()</code> output?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q3o-3" /> Browser Developer Tools → Console tab</label></li>
+              <li><label><input type="radio" name="q3o-3" /> Browser Developer Tools → Network tab</label></li>
+              <li><label><input type="radio" name="q3o-3" /> In a popup alert box on the page</label></li>
+              <li><label><input type="radio" name="q3o-3" /> In the HTML source code of the page</label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>4.</strong> What does <code>prompt()</code> return if the user clicks Cancel?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q3o-4" /> <code>null</code></label></li>
+              <li><label><input type="radio" name="q3o-4" /> <code>undefined</code></label></li>
+              <li><label><input type="radio" name="q3o-4" /> An empty string <code>""</code></label></li>
+              <li><label><input type="radio" name="q3o-4" /> <code>false</code></label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>5.</strong> How do you convert prompt input to a number for math?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q3o-5" /> <code>Number(userInput)</code> or <code>parseInt(userInput)</code></label></li>
+              <li><label><input type="radio" name="q3o-5" /> <code>String(userInput)</code> or <code>toString()</code></label></li>
+              <li><label><input type="radio" name="q3o-5" /> <code>Boolean(userInput)</code> or <code>!!userInput</code></label></li>
+              <li><label><input type="radio" name="q3o-5" /> <code>Array(userInput)</code> or <code>split()</code></label></li>
+            </ul>
+          </div>
+          <details class="quiz-answers">
+            <summary>View Answer Key</summary>
+            <ol>
+              <li><strong>A</strong> — alert shows a popup.</li>
+              <li><strong>A</strong> — prompt always returns a string.</li>
+              <li><strong>A</strong> — Console tab shows log output.</li>
+              <li><strong>A</strong> — Cancel returns null.</li>
+              <li><strong>A</strong> — Number() or parseInt() converts to number.</li>
+            </ol>
+          </details>
+        </div>
+      </section>
+
+
+      <!-- LESSON 04 — DATA & TYPES -->
+      <section class="lesson" id="data">
+        <div class="lesson-header">
+          <div class="lesson-num">Lesson 04</div>
+          <div class="lesson-title-group">
+            <h2>Data &amp; Types</h2>
+            <span class="subtitle">Primitive and non-primitive data types</span>
+          </div>
+        </div>
+
+        <h3>What Is Data?</h3>
+        <p><strong>Data</strong> is any value your program works with — a name, age, price, or login status. Every value in JavaScript has a <strong>type</strong> that tells the engine how to store and use it.</p>
+
+        <h3>Two Categories</h3>
+        <table class="ref-table">
+          <tr><th>Category</th><th>Types</th><th>Stored</th></tr>
+          <tr><td><strong>Primitive</strong></td><td>String, Number, Boolean, null, undefined, Symbol, BigInt</td><td>By value</td></tr>
+          <tr><td><strong>Non-Primitive</strong></td><td>Object, Array, Function</td><td>By reference</td></tr>
+        </table>
+
+        <h3>String</h3>
+        <p>Text wrapped in quotes. Three ways to create strings:</p>
+        <pre data-lang="JavaScript"><code>let a = "double quotes";
+let b = 'single quotes';
+let c = `backticks (template literals)`;
+
+// Concatenation
+let first = "Ada";
+let last = "Okafor";
+let full = first + " " + last;           // "Ada Okafor"
+let greeting = `Hello, ${first}!`;      // "Hello, Ada!"
+
+// Length and index (starts at 0)
+console.log(full.length);   // 10
+console.log(full[0]);       // "A"
+console.log(full[4]);       // "O"
+
+// Escape characters
+let quote = "She said, \"Hello!\"";   // quotes inside
+let path = "C:\\Users\\Desktop";      // backslash
+let lines = "Line 1\nLine 2";         // new line
+let tab = "Name\tAge";                // tab</code></pre>
+
+        <h3>Number</h3>
+        <pre data-lang="JavaScript"><code>let age = 25;
+let price = 99.99;
+
+console.log(10 + 3);   // 13  addition
+console.log(10 - 3);   // 7   subtraction
+console.log(10 * 3);   // 30  multiplication
+console.log(10 / 3);   // 3.333... division
+console.log(10 % 3);   // 1   modulus (remainder)
+
+// Modulus use cases
+console.log(10 % 2 === 0);  // true → even
+console.log(7 % 2 === 1);   // true → odd</code></pre>
+
+        <h3>Boolean</h3>
+        <pre data-lang="JavaScript"><code>let isLoggedIn = true;
+let hasPermission = false;
+let isAdult = age >= 18;  // evaluates to true or false</code></pre>
+
+        <h3>null and undefined</h3>
+        <pre data-lang="JavaScript"><code>let selectedUser = null;    // intentionally empty
+let username;               // undefined — not assigned yet
+console.log(username);      // undefined</code></pre>
+        <p><code>null</code> = you set it empty. <code>undefined</code> = JavaScript hasn't given it a value yet.</p>
+
+        <h3>Symbol &amp; BigInt (Brief)</h3>
+        <pre data-lang="JavaScript"><code>// Symbol — unique identifier (advanced use)
+const id = Symbol("id");
+const id2 = Symbol("id");
+console.log(id === id2);  // false
+
+// BigInt — very large integers (note the 'n' suffix)
+const big = 9007199254740991n;
+console.log(big + 1n);</code></pre>
+
+        <h3>Non-Primitive Types</h3>
+        <pre data-lang="JavaScript"><code>// Object — labeled key-value data
+const person = { name: "Chidi", age: 22 };
+
+// Array — ordered list (arrays are objects)
+const scores = [85, 90, 78];
+
+// Function — reusable callable code
+function greet(name) {
+  return "Hello, " + name;
+}</code></pre>
+        <p>Primitives are copied by value. Objects, arrays, and functions are copied by <strong>reference</strong>.</p>
+
+        <h3>typeof Operator</h3>
+        <pre data-lang="JavaScript"><code>console.log(typeof "hello");    // "string"
+console.log(typeof 42);         // "number"
+console.log(typeof true);       // "boolean"
+console.log(typeof undefined);  // "undefined"
+console.log(typeof null);       // "object" (known quirk!)
+console.log(typeof {});         // "object"</code></pre>
+
+        <hr class="section-divider" />
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 4.1</div>
+          <h5>Type Detective</h5>
+          <ol>
+            <li>Create one variable of each primitive type (string, number, boolean, null, undefined)</li>
+            <li>Log each value and its <code>typeof</code> result</li>
+            <li>Create an object and an array — log their types</li>
+          </ol>
+        </div>
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 4.2</div>
+          <h5>String Practice</h5>
+          <ol>
+            <li>Create a full name using concatenation and template literals</li>
+            <li>Log the length and the first and last character using index</li>
+            <li>Create a string with escaped quotes and a new line</li>
+          </ol>
+        </div>
+
+        <div class="exercise-block quiz" data-quiz-id="data">
+          <div class="block-label">🎯 Quiz 4</div>
+          <h5>Lesson 4 — Knowledge Check (5 Questions)</h5>
+          <button type="button" class="btn-present-quiz" onclick="presentQuiz(this)">📸 Present Quiz for Screenshot</button>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>1.</strong> Which is a primitive data type?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q4d-1" /> String</label></li>
+              <li><label><input type="radio" name="q4d-1" /> Array</label></li>
+              <li><label><input type="radio" name="q4d-1" /> Object</label></li>
+              <li><label><input type="radio" name="q4d-1" /> Function</label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>2.</strong> What is the result of <code>10 % 3</code>?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q4d-2" /> 1</label></li>
+              <li><label><input type="radio" name="q4d-2" /> 3</label></li>
+              <li><label><input type="radio" name="q4d-2" /> 3.33</label></li>
+              <li><label><input type="radio" name="q4d-2" /> 0</label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>3.</strong> What does <code>typeof null</code> return?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q4d-3" /> "object"</label></li>
+              <li><label><input type="radio" name="q4d-3" /> "null"</label></li>
+              <li><label><input type="radio" name="q4d-3" /> "undefined"</label></li>
+              <li><label><input type="radio" name="q4d-3" /> "boolean"</label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>4.</strong> What index is the first character in a string?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q4d-4" /> 0</label></li>
+              <li><label><input type="radio" name="q4d-4" /> 1</label></li>
+              <li><label><input type="radio" name="q4d-4" /> -1</label></li>
+              <li><label><input type="radio" name="q4d-4" /> Depends on length</label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>5.</strong> What is the difference between <code>null</code> and <code>undefined</code>?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q4d-5" /> null is intentional empty; undefined means not yet assigned</label></li>
+              <li><label><input type="radio" name="q4d-5" /> undefined is intentional empty; null means not yet assigned</label></li>
+              <li><label><input type="radio" name="q4d-5" /> They are identical and interchangeable</label></li>
+              <li><label><input type="radio" name="q4d-5" /> null is for numbers; undefined is for strings</label></li>
+            </ul>
+          </div>
+          <details class="quiz-answers">
+            <summary>View Answer Key</summary>
+            <ol>
+              <li><strong>A</strong> — String is primitive.</li>
+              <li><strong>A</strong> — 10 % 3 = 1 (remainder).</li>
+              <li><strong>A</strong> — typeof null is "object" (quirk).</li>
+              <li><strong>A</strong> — Strings are zero-indexed.</li>
+              <li><strong>A</strong> — null vs undefined distinction.</li>
+            </ol>
+          </details>
+        </div>
+      </section>
+
+
+      <!-- ══════════════════════════════
+       LESSON 5 — VARIABLES, OPERATORS & DATA TYPES
+  ══════════════════════════════ -->
+      <section class="lesson" id="variables">
+        <div class="lesson-header">
+          <div class="lesson-num">Lesson 05</div>
+          <div class="lesson-title-group">
+            <h2>Variables &amp; Scope</h2>
+            <span class="subtitle">var, let, const, operators, and scope</span>
+          </div>
+        </div>
+
+        <h3>Declaring Variables: let, const, and var</h3>
+        <pre data-lang="JavaScript"><code>let score = 10;        // Can be reassigned
+const PI = 3.14159;    // Cannot be reassigned — use for values that never change
+var oldStyle = "avoid"; // Function-scoped, hoisted — prefer let/const
+
+score = 20;            // ✅ OK — let allows reassignment
+// PI = 4;             // ❌ Error — const cannot be reassigned</code></pre>
+
+        <table class="ref-table">
+          <tr><th>Keyword</th><th>Reassignable?</th><th>Scope</th><th>When to Use</th></tr>
+          <tr><td><code>const</code></td><td>No</td><td>Block</td><td>Default choice — constants, references</td></tr>
+          <tr><td><code>let</code></td><td>Yes</td><td>Block</td><td>Values that will change (counters, flags)</td></tr>
+          <tr><td><code>var</code></td><td>Yes</td><td>Function</td><td>Legacy code only — avoid in new projects</td></tr>
+        </table>
+
+        <h3>JavaScript Data Types</h3>
+        <pre data-lang="JavaScript"><code>// Primitives
+let name = "Amara";           // String
+let age = 25;                 // Number
+let isStudent = true;         // Boolean
+let nothing = null;           // Null (intentional absence of value)
+let notDefined;               // Undefined (declared but no value assigned)
+let id = Symbol("id");        // Symbol (unique identifier)
+
+// Reference type
+let person = { name: "Chidi", age: 30 };  // Object</code></pre>
+
+        <h3>typeof Operator</h3>
+        <pre data-lang="JavaScript"><code>console.log(typeof "hello");   // "string"
+console.log(typeof 42);        // "number"
+console.log(typeof true);        // "boolean"
+console.log(typeof undefined);   // "undefined"
+console.log(typeof null);        // "object" (known quirk!)
+console.log(typeof {});          // "object"</code></pre>
+
+        <h3>Arithmetic Operators</h3>
+        <pre data-lang="JavaScript"><code>let a = 10, b = 3;
+console.log(a + b);   // 13  Addition
+console.log(a - b);   // 7   Subtraction
+console.log(a * b);   // 30  Multiplication
+console.log(a / b);   // 3.333... Division
+console.log(a % b);   // 1   Modulus (remainder)
+console.log(a ** b);  // 1000 Exponentiation
+
+let count = 5;
+count++;              // Post-increment: count becomes 6
+++count;              // Pre-increment: count becomes 7</code></pre>
+
+        <h3>Assignment and Comparison Operators</h3>
+        <pre data-lang="JavaScript"><code>let x = 10;
+x += 5;    // x = 15 (same as x = x + 5)
+
+// Comparison — always use === and !==
+console.log(5 == "5");   // true  (loose — coerces types)
+console.log(5 === "5");  // false (strict — type and value must match)
+console.log(5 != "5");   // false
+console.log(5 !== "5");  // true
+
+// Logical operators
+let isAdult = age >= 18;
+let hasTicket = true;
+let canEnter = isAdult && hasTicket;  // AND
+let isWeekend = day === "Sat" || day === "Sun";  // OR
+let isClosed = !isOpen;                 // NOT</code></pre>
+
+        <h3>Template Literals</h3>
+        <pre data-lang="JavaScript"><code>let firstName = "Ada";
+let lastName = "Okafor";
+let greeting = `Hello, ${firstName} ${lastName}!`;
+console.log(greeting); // "Hello, Ada Okafor!"
+
+let multiline = `
+  Line one
+  Line two
+`;
+console.log(multiline);</code></pre>
+
+        <h3>Type Coercion (Watch Out!)</h3>
+        <pre data-lang="JavaScript"><code>console.log("5" + 3);    // "53"  (string concatenation)
+console.log("5" - 3);    // 2     (subtraction converts to number)
+console.log(true + 1);   // 2     (true becomes 1)
+console.log(false + 1);  // 1     (false becomes 0)
+
+// Always use Number() or parseInt() when converting user input
+let userInput = "42";
+let num = Number(userInput);</code></pre>
+
+        <div class="info-box info-warn">
+          <span class="icon">⚠️</span>
+          <div class="content">
+            <strong>Golden Rule</strong>
+            <p>Always use <code>===</code> and <code>!==</code> for comparisons. Loose equality (<code>==</code>) causes subtle bugs.</p>
+          </div>
+        </div>
+
+              <!-- SCOPE SUPPLEMENT for variables lesson -->
+        <h3>JavaScript Scope</h3>
+        <p><strong>Scope</strong> refers to where variables, functions, and objects are visible and can be used in your code.</p>
+
+        <h4>Global Scope</h4>
+        <pre data-lang="JavaScript"><code>const appName = "TodoApp";  // global — visible everywhere
+
+function showApp() {
+  console.log(appName);  // ✅ works
+}</code></pre>
+
+        <h4>Function Scope</h4>
+        <pre data-lang="JavaScript"><code>function demo() {
+  let secret = "hidden";
+  console.log(secret);  // ✅
+}
+// console.log(secret);  // ❌ Error — not accessible outside</code></pre>
+
+        <h4>Block Scope</h4>
+        <pre data-lang="JavaScript"><code>if (true) {
+  let temp = 10;
+  console.log(temp);  // ✅
+}
+// console.log(temp);  // ❌ Error
+
+for (let i = 0; i < 3; i++) {
+  console.log(i);  // ✅ inside loop
+}
+// console.log(i);  // ❌ Error — let is block-scoped</code></pre>
+
+        <div class="info-box info-warn">
+          <span class="icon">⚠️</span>
+          <div class="content">
+            <strong>var vs let</strong>
+            <p><code>var</code> ignores block scope and leaks out of <code>if</code> and <code>for</code> blocks. Always prefer <code>let</code> and <code>const</code>.</p>
+          </div>
+        </div>
+
+        <hr class="section-divider" />
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 5.1</div>
+          <h5>Shopping Cart Calculator</h5>
+          <ol>
+            <li>Declare <code>const</code> variables for item price, quantity, and tax rate (e.g. 0.075)</li>
+            <li>Calculate subtotal, tax amount, and grand total using arithmetic operators</li>
+            <li>Log each value with template literals: <code>Total: ₦${total}</code></li>
+            <li>Use <code>typeof</code> to log the type of each variable</li>
+          </ol>
+        </div>
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 5.2</div>
+          <h5>Type Coercion Detective</h5>
+          <p>Predict the output, then verify in the console:</p>
+          <pre data-lang="JavaScript"><code>console.log("10" + 5);
+console.log("10" - 5);
+console.log(0 == false);
+console.log(0 === false);
+console.log(null == undefined);</code></pre>
+          <p>Fix any expressions that would cause bugs in a real app.</p>
+        </div>
+
+        <div class="exercise-block quiz">
+          <div class="block-label">🎯 Quiz 5</div>
+          <h5>Lesson 5 — Knowledge Check (5 Questions)</h5>
+          <button type="button" class="btn-present-quiz" onclick="presentQuiz(this)">📸 Present Quiz for Screenshot</button>
+          <p>Select the best answer for each question. Options are designed to look similar — read carefully.</p>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>1.</strong> Which declaration should you use for a value that will never be reassigned?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q5-1" /> <code>const</code></label></li>
+              <li><label><input type="radio" name="q5-1" /> <code>let</code></label></li>
+              <li><label><input type="radio" name="q5-1" /> <code>var</code></label></li>
+              <li><label><input type="radio" name="q5-1" /> <code>static</code></label></li>
+            </ul>
+          </div>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>2.</strong> What is the result of <code>"8" + 2</code>?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q5-2" /> <code>"82"</code> (string concatenation)</label></li>
+              <li><label><input type="radio" name="q5-2" /> <code>10</code> (numeric addition)</label></li>
+              <li><label><input type="radio" name="q5-2" /> <code>NaN</code> (not a number)</label></li>
+              <li><label><input type="radio" name="q5-2" /> <code>8</code> (string converted, then discarded)</label></li>
+            </ul>
+          </div>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>3.</strong> What does <code>typeof null</code> return?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q5-3" /> <code>"object"</code></label></li>
+              <li><label><input type="radio" name="q5-3" /> <code>"null"</code></label></li>
+              <li><label><input type="radio" name="q5-3" /> <code>"undefined"</code></label></li>
+              <li><label><input type="radio" name="q5-3" /> <code>"boolean"</code></label></li>
+            </ul>
+          </div>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>4.</strong> Which comparison returns <code>true</code>?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q5-4" /> <code>5 === "5"</code></label></li>
+              <li><label><input type="radio" name="q5-4" /> <code>5 == "5"</code></label></li>
+              <li><label><input type="radio" name="q5-4" /> <code>5 !== 5</code></label></li>
+              <li><label><input type="radio" name="q5-4" /> <code>5 === 6</code></label></li>
+            </ul>
+          </div>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>5.</strong> Which ES6 syntax uses backticks and <code>${}</code> for string interpolation?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q5-5" /> Template literals: <code>`Hello, ${name}`</code></label></li>
+              <li><label><input type="radio" name="q5-5" /> String concatenation: <code>"Hello, " + name</code></label></li>
+              <li><label><input type="radio" name="q5-5" /> Format strings: <code>"Hello, #name"</code></label></li>
+              <li><label><input type="radio" name="q5-5" /> Tagged templates: <code>"Hello, &lt;name&gt;"</code></label></li>
+            </ul>
+          </div>
+
+          <details class="quiz-answers">
+            <summary>View Answer Key</summary>
+            <ol>
+              <li><strong>A</strong> — const prevents reassignment.</li>
+              <li><strong>A</strong> — + with a string concatenates.</li>
+              <li><strong>A</strong> — typeof null returns "object" (historical quirk).</li>
+              <li><strong>B</strong> — Loose equality coerces "5" to 5.</li>
+              <li><strong>A</strong> — Backticks and ${} are template literals.</li>
+            </ol>
+          </details>
+        </div>
+      </section>
+
+      <!-- LESSON 06 — BOOLEAN LOGIC -->
+      <section class="lesson" id="boolean">
+        <div class="lesson-header">
+          <div class="lesson-num">Lesson 06</div>
+          <div class="lesson-title-group">
+            <h2>Boolean Logic</h2>
+            <span class="subtitle">True, false, comparisons, and truthy values</span>
+          </div>
+        </div>
+
+        <h3>True, False and Beyond</h3>
+        <p>Booleans represent yes/no decisions. But JavaScript also treats <em>any</em> value as truthy or falsy inside conditions like <code>if (value)</code>.</p>
+
+        <h3>Comparison Operators</h3>
+        <pre data-lang="JavaScript"><code>5 > 3    // true   greater than
+5 < 3    // false  less than
+5 >= 5   // true   greater or equal
+5 <= 4   // false  less or equal
+5 === 5  // true   strict equal (value AND type)
+5 !== 3  // true   strict not equal
+5 == "5" // true   loose equal (avoid!)
+5 === "5" // false strict — different types</code></pre>
+
+        <div class="info-box info-warn">
+          <span class="icon">⚠️</span>
+          <div class="content">
+            <strong>Golden Rule</strong>
+            <p>Always use <code>===</code> and <code>!==</code>. Loose equality (<code>==</code>) causes subtle bugs.</p>
+          </div>
+        </div>
+
+        <h3>Logical Operators: AND, OR, NOT</h3>
+        <pre data-lang="JavaScript"><code>true && true   // AND → true
+true && false  // AND → false
+true || false  // OR  → true
+false || false // OR  → false
+!true          // NOT → false
+!false         // NOT → true
+
+let isAdult = age >= 18;
+let hasTicket = true;
+let canEnter = isAdult && hasTicket;
+
+let isWeekend = day === "Sat" || day === "Sun";</code></pre>
+
+        <h3>Truthy and Falsy Values</h3>
+        <p><strong>Falsy values</strong> (only these 6 + false):</p>
+        <ul>
+          <li><code>false</code></li>
+          <li><code>0</code></li>
+          <li><code>""</code> (empty string)</li>
+          <li><code>null</code></li>
+          <li><code>undefined</code></li>
+          <li><code>NaN</code></li>
+        </ul>
+        <p><strong>Everything else is truthy</strong> — including <code>"0"</code>, <code>" "</code>, <code>[]</code>, <code>{}</code>.</p>
+        <pre data-lang="JavaScript"><code>if ("hello") {
+  console.log("Truthy!");  // runs
+}
+if (0) {
+  console.log("Never runs");
+}
+if ("") {
+  console.log("Never runs");
+}</code></pre>
+
+        <hr class="section-divider" />
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 6.1</div>
+          <h5>True or False Predictions</h5>
+          <p>Predict before running in the console:</p>
+          <pre data-lang="JavaScript"><code>console.log(5 > 3 && 10 < 20);
+console.log(5 === "5");
+console.log(0 == false);
+console.log(0 === false);
+console.log("" || "default");
+console.log(null ?? "fallback");</code></pre>
+        </div>
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 6.2</div>
+          <h5>Access Checker</h5>
+          <ol>
+            <li>Store <code>age</code> and <code>hasMembership</code> in variables</li>
+            <li>Use <code>&&</code> and <code>||</code> to check if user can enter (18+ AND member) OR has a guest pass</li>
+            <li>Log the result with a clear message</li>
+          </ol>
+        </div>
+
+        <div class="exercise-block quiz" data-quiz-id="boolean">
+          <div class="block-label">🎯 Quiz 6</div>
+          <h5>Lesson 6 — Knowledge Check (5 Questions)</h5>
+          <button type="button" class="btn-present-quiz" onclick="presentQuiz(this)">📸 Present Quiz for Screenshot</button>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>1.</strong> Which comparison returns <code>true</code>?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q6b-1" /> <code>5 == "5"</code></label></li>
+              <li><label><input type="radio" name="q6b-1" /> <code>5 === "5"</code></label></li>
+              <li><label><input type="radio" name="q6b-1" /> <code>5 !== 5</code></label></li>
+              <li><label><input type="radio" name="q6b-1" /> <code>0 === false</code></label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>2.</strong> What does <code>true && false</code> evaluate to?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q6b-2" /> false</label></li>
+              <li><label><input type="radio" name="q6b-2" /> true</label></li>
+              <li><label><input type="radio" name="q6b-2" /> undefined</label></li>
+              <li><label><input type="radio" name="q6b-2" /> null</label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>3.</strong> Which value is <strong>falsy</strong>?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q6b-3" /> <code>0</code></label></li>
+              <li><label><input type="radio" name="q6b-3" /> <code>"0"</code></label></li>
+              <li><label><input type="radio" name="q6b-3" /> <code>[]</code></label></li>
+              <li><label><input type="radio" name="q6b-3" /> <code>{}</code></label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>4.</strong> What does <code>!true</code> return?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q6b-4" /> false</label></li>
+              <li><label><input type="radio" name="q6b-4" /> true</label></li>
+              <li><label><input type="radio" name="q6b-4" /> 0</label></li>
+              <li><label><input type="radio" name="q6b-4" /> undefined</label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>5.</strong> Which logical operator means "at least one must be true"?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q6b-5" /> <code>||</code> (OR)</label></li>
+              <li><label><input type="radio" name="q6b-5" /> <code>&amp;&amp;</code> (AND)</label></li>
+              <li><label><input type="radio" name="q6b-5" /> <code>!</code> (NOT)</label></li>
+              <li><label><input type="radio" name="q6b-5" /> <code>===</code> (strict equal)</label></li>
+            </ul>
+          </div>
+          <details class="quiz-answers">
+            <summary>View Answer Key</summary>
+            <ol>
+              <li><strong>A</strong> — Loose equality coerces types.</li>
+              <li><strong>A</strong> — AND needs both true.</li>
+              <li><strong>A</strong> — 0 is falsy.</li>
+              <li><strong>A</strong> — NOT flips true to false.</li>
+              <li><strong>A</strong> — OR needs at least one true.</li>
+            </ol>
+          </details>
+        </div>
+      </section>
+
+
+      <!-- ══════════════════════════════
+       LESSON 8 — FUNCTIONS & FORM VALIDATION
+  ══════════════════════════════ -->
+      <section class="lesson" id="functions">
+        <div class="lesson-header">
+          <div class="lesson-num">Lesson 07</div>
+          <div class="lesson-title-group">
+            <h2>JavaScript Functions</h2>
+            <span class="subtitle">Declarations, arrows, parameters, callbacks</span>
+          </div>
+        </div>
+
+        <h3>Why Functions Matter</h3>
+        <p>
+          A <strong>function</strong> is a reusable block of code that performs a specific task.
+          Instead of writing the same logic ten times, you write it once and call it whenever needed.
+          Functions are the building blocks of maintainable, professional JavaScript.
+        </p>
+
+        <h3>Function Declaration</h3>
+        <pre data-lang="JavaScript"><code>function greet(name) {
+  return "Hello, " + name + "!";
+}
+
+console.log(greet("Amara")); // "Hello, Amara!"
+console.log(greet("Chidi")); // "Hello, Chidi!"</code></pre>
+
+        <h3>Function Expression</h3>
+        <pre data-lang="JavaScript"><code>const calculateArea = function (width, height) {
+  return width * height;
+};
+
+console.log(calculateArea(5, 10)); // 50</code></pre>
+
+        <h3>Arrow Functions (ES6)</h3>
+        <pre data-lang="JavaScript"><code>// Full syntax
+const multiply = (a, b) => {
+  return a * b;
+};
+
+// Concise — implicit return
+const square = (n) => n * n;
+const sayHi = () => console.log("Hi!");
+
+console.log(multiply(3, 4)); // 12
+console.log(square(5));      // 25</code></pre>
+
+        <h3>Parameters and Default Values</h3>
+        <pre data-lang="JavaScript"><code>function createUser(name, role = "student", active = true) {
+  return { name, role, active };
+}
+
+console.log(createUser("Ada"));
+// { name: "Ada", role: "student", active: true }
+
+console.log(createUser("Emeka", "instructor", false));
+// { name: "Emeka", role: "instructor", active: false }</code></pre>
+
+        <h3>Return Values</h3>
+        <pre data-lang="JavaScript"><code>function isEven(num) {
+  return num % 2 === 0;
+}
+
+function findMax(a, b, c) {
+  if (a >= b && a >= c) return a;
+  if (b >= a && b >= c) return b;
+  return c;
+}
+
+console.log(isEven(4));    // true
+console.log(findMax(3, 9, 5)); // 9</code></pre>
+
+        <h3>Callback Functions</h3>
+        <p>A <strong>callback</strong> is a function passed as an argument to another function, to be run later.</p>
+        <pre data-lang="JavaScript"><code>function runTwice(fn) {
+  fn();
+  fn();
+}
+
+runTwice(() => console.log("Hello!"));
+
+// Real example — runs after a delay
+setTimeout(function () {
+  console.log("Runs after 2 seconds");
+}, 2000);</code></pre>
+
+        <hr class="section-divider" />
+
+              <!-- FUNCTION EXERCISES WITH VIEW ANSWER -->
+      <div class="exercise-block exercise">
+        <div class="block-label">✏️ Function Drills</div>
+        <h5>Write a Function That… (click View Answer when ready)</h5>
+
+        <ol>
+          <li>
+            <strong>Check if a number is even</strong>
+            <details class="code-answer">
+              <summary>View Answer</summary>
+              <pre data-lang="JavaScript"><code>function isEven(num) {
+  return num % 2 === 0;
+}
+console.log(isEven(4));  // true
+console.log(isEven(7));  // false</code></pre>
+            </details>
+          </li>
+          <li>
+            <strong>Check if a number is odd</strong>
+            <details class="code-answer">
+              <summary>View Answer</summary>
+              <pre data-lang="JavaScript"><code>function isOdd(num) {
+  return num % 2 !== 0;
+}</code></pre>
+            </details>
+          </li>
+          <li>
+            <strong>Find the square of a number</strong>
+            <details class="code-answer">
+              <summary>View Answer</summary>
+              <pre data-lang="JavaScript"><code>function square(n) {
+  return n * n;
+}</code></pre>
+            </details>
+          </li>
+          <li>
+            <strong>Find the cube of a number</strong>
+            <details class="code-answer">
+              <summary>View Answer</summary>
+              <pre data-lang="JavaScript"><code>function cube(n) {
+  return n * n * n;
+}</code></pre>
+            </details>
+          </li>
+          <li>
+            <strong>Add two numbers</strong>
+            <details class="code-answer">
+              <summary>View Answer</summary>
+              <pre data-lang="JavaScript"><code>function add(a, b) {
+  return a + b;
+}</code></pre>
+            </details>
+          </li>
+          <li>
+            <strong>Find the larger of two numbers</strong>
+            <details class="code-answer">
+              <summary>View Answer</summary>
+              <pre data-lang="JavaScript"><code>function larger(a, b) {
+  return a > b ? a : b;
+}</code></pre>
+            </details>
+          </li>
+          <li>
+            <strong>Check if a number is positive or negative</strong>
+            <details class="code-answer">
+              <summary>View Answer</summary>
+              <pre data-lang="JavaScript"><code>function checkSign(num) {
+  if (num > 0) return "positive";
+  if (num < 0) return "negative";
+  return "zero";
+}</code></pre>
+            </details>
+          </li>
+          <li>
+            <strong>Find the factorial of a number</strong>
+            <details class="code-answer">
+              <summary>View Answer</summary>
+              <pre data-lang="JavaScript"><code>function factorial(n) {
+  let result = 1;
+  for (let i = 1; i <= n; i++) {
+    result *= i;
+  }
+  return result;
+}
+// factorial(5) → 120</code></pre>
+            </details>
+          </li>
+          <li>
+            <strong>Return the first character of a string</strong>
+            <details class="code-answer">
+              <summary>View Answer</summary>
+              <pre data-lang="JavaScript"><code>function firstChar(str) {
+  return str[0];
+}</code></pre>
+            </details>
+          </li>
+        </ol>
+      </div>
+
+        <hr class="section-divider" />
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 7.1</div>
+          <h5>Utility Function Library</h5>
+          <ol>
+            <li>Write a function <code>celsiusToFahrenheit(c)</code> that returns the converted value</li>
+            <li>Write an arrow function <code>isPalindrome(str)</code> that returns true if a word reads the same backwards</li>
+            <li>Write a function <code>formatCurrency(amount)</code> using template literals: <code>₦1,500.00</code></li>
+            <li>Test each function with at least 3 different inputs in the console</li>
+          </ol>
+        </div>
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 7.2</div>
+          <h5>Function Challenge Set</h5>
+          <ol>
+            <li>Without looking at answers, write all 9 functions from the Function Drills section</li>
+            <li>Test each with at least 2 inputs using <code>console.log</code></li>
+            <li>Convert at least 3 functions to arrow function syntax</li>
+          </ol>
+        </div>
+
+        <div class="exercise-block quiz">
+          <div class="block-label">🎯 Quiz 7</div>
+          <h5>Lesson 7 — Knowledge Check (5 Questions)</h5>
+          <button type="button" class="btn-present-quiz" onclick="presentQuiz(this)">📸 Present Quiz for Screenshot</button>
+          <p>Select the best answer for each question. Options are designed to look similar — read carefully.</p>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>1.</strong> What is the main purpose of a JavaScript function?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q8-1" /> To group reusable code that performs a specific task</label></li>
+              <li><label><input type="radio" name="q8-1" /> To store permanent data in the browser database</label></li>
+              <li><label><input type="radio" name="q8-1" /> To style HTML elements with colors and fonts</label></li>
+              <li><label><input type="radio" name="q8-1" /> To define the structure of an HTML document</label></li>
+            </ul>
+          </div>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>2.</strong> Which syntax defines an arrow function that returns <code>a + b</code>?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q8-2" /> <code>const add = (a, b) => a + b;</code></label></li>
+              <li><label><input type="radio" name="q8-2" /> <code>function add = (a, b) => { a + b }</code></label></li>
+              <li><label><input type="radio" name="q8-2" /> <code>const add(a, b) -> a + b;</code></label></li>
+              <li><label><input type="radio" name="q8-2" /> <code>arrow add(a, b) { return a + b; }</code></label></li>
+            </ul>
+          </div>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>3.</strong> What happens if a function has no <code>return</code> statement?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q8-3" /> It implicitly returns <code>undefined</code></label></li>
+              <li><label><input type="radio" name="q8-3" /> It implicitly returns <code>null</code></label></li>
+              <li><label><input type="radio" name="q8-3" /> It throws a syntax error and won't run</label></li>
+              <li><label><input type="radio" name="q8-3" /> It implicitly returns <code>0</code></label></li>
+            </ul>
+          </div>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>4.</strong> Why use <code>event.preventDefault()</code> on a form submit handler?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q8-4" /> To stop the page from reloading so you can validate first</label></li>
+              <li><label><input type="radio" name="q8-4" /> To stop the user from typing in the form fields</label></li>
+              <li><label><input type="radio" name="q8-4" /> To stop the form from displaying error messages</label></li>
+              <li><label><input type="radio" name="q8-4" /> To stop the browser from saving the form data</label></li>
+            </ul>
+          </div>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>5.</strong> A variable declared with <code>const</code> inside a function is accessible:</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q8-5" /> Only inside that function (local scope)</label></li>
+              <li><label><input type="radio" name="q8-5" /> Everywhere in the entire program (global scope)</label></li>
+              <li><label><input type="radio" name="q8-5" /> Only in other functions defined before it</label></li>
+              <li><label><input type="radio" name="q8-5" /> Only in the HTML file, not in JavaScript</label></li>
+            </ul>
+          </div>
+
+          <details class="quiz-answers">
+            <summary>View Answer Key</summary>
+            <ol>
+              <li><strong>A</strong> — Functions bundle reusable logic.</li>
+              <li><strong>A</strong> — Arrow function with implicit return.</li>
+              <li><strong>A</strong> — No return means undefined is returned.</li>
+              <li><strong>A</strong> — preventDefault stops page reload on submit.</li>
+              <li><strong>A</strong> — Function-scoped variables are local.</li>
+            </ol>
+          </details>
+        </div>
+      </section>
+
+      <!-- LESSON 08 — ARRAYS -->
+      <section class="lesson" id="arrays">
+        <div class="lesson-header">
+          <div class="lesson-num">Lesson 08</div>
+          <div class="lesson-title-group">
+            <h2>JavaScript Arrays</h2>
+            <span class="subtitle">Ordered lists of any data type</span>
+          </div>
+        </div>
+
+        <h3>What Is an Array?</h3>
+        <p>An <strong>array</strong> is an ordered list of values. Use arrays when order matters — shopping cart items, quiz scores, or a list of names.</p>
+
+        <h3>Creating Arrays</h3>
+        <pre data-lang="JavaScript"><code>const numbers = [10, 20, 30];              // array of numbers
+const names = ["Ada", "Emeka", "Chi"];     // array of strings
+const mixed = [1, "hello", true, null];    // mixed data types
+const matrix = [[1, 2], [3, 4]];           // array of arrays
+const users = [{ name: "Ada" }, { name: "Bob" }];  // array of objects</code></pre>
+
+        <h3>Accessing Elements</h3>
+        <pre data-lang="JavaScript"><code>console.log(numbers[0]);   // 10 — first element
+console.log(numbers[2]);   // 30 — third element
+console.log(numbers.length); // 3 — number of items</code></pre>
+
+        <h3>Modifying Elements</h3>
+        <pre data-lang="JavaScript"><code>numbers[1] = 99;
+console.log(numbers);  // [10, 99, 30]</code></pre>
+
+        <h3>Array Methods: push, pop, shift, unshift</h3>
+        <pre data-lang="JavaScript"><code>const fruits = ["Apple", "Banana"];
+
+fruits.push("Mango");      // add to END → ["Apple", "Banana", "Mango"]
+fruits.pop();              // remove from END → ["Apple", "Banana"]
+fruits.unshift("Grape");   // add to START → ["Grape", "Apple", "Banana"]
+fruits.shift();            // remove from START → ["Apple", "Banana"]</code></pre>
+
+        <h3>Looping Through Arrays</h3>
+        <pre data-lang="JavaScript"><code>const colors = ["red", "green", "blue"];
+
+// Classic for loop with index
+for (let i = 0; i < colors.length; i++) {
+  console.log(i, colors[i]);
+}
+
+// for...of — cleaner
+for (let color of colors) {
+  console.log(color);
+}
+
+// forEach method
+colors.forEach((color, index) => {
+  console.log(index, color);
+});</code></pre>
+
+        <h3>More Useful Methods</h3>
+        <pre data-lang="JavaScript"><code>const scores = [85, 90, 78, 92];
+
+scores.includes(90);                    // true
+scores.indexOf(78);                     // 2
+const doubled = scores.map(n => n * 2); // [170, 180, 156, 184]
+const passed = scores.filter(n => n >= 80); // [85, 90, 92]
+const total = scores.reduce((sum, n) => sum + n, 0); // 345</code></pre>
+
+        <hr class="section-divider" />
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 8.1</div>
+          <h5>Shopping List</h5>
+          <ol>
+            <li>Create an array of 5 grocery items</li>
+            <li>push a new item, then pop the last one</li>
+            <li>Loop and log each item with its index</li>
+            <li>Log the final length</li>
+          </ol>
+        </div>
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 8.2</div>
+          <h5>Grade Analyzer</h5>
+          <ol>
+            <li>Create an array of 5 test scores</li>
+            <li>Use <code>reduce</code> to calculate the average</li>
+            <li>Use <code>filter</code> to get scores above 70</li>
+            <li>Use <code>map</code> to convert scores to letter grades</li>
+          </ol>
+        </div>
+
+        <div class="exercise-block quiz" data-quiz-id="arrays">
+          <div class="block-label">🎯 Quiz 8</div>
+          <h5>Lesson 8 — Knowledge Check (5 Questions)</h5>
+          <button type="button" class="btn-present-quiz" onclick="presentQuiz(this)">📸 Present Quiz for Screenshot</button>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>1.</strong> What index is the first element in an array?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q8a-1" /> 0</label></li>
+              <li><label><input type="radio" name="q8a-1" /> 1</label></li>
+              <li><label><input type="radio" name="q8a-1" /> -1</label></li>
+              <li><label><input type="radio" name="q8a-1" /> Depends on length</label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>2.</strong> Which method adds an element to the <strong>end</strong>?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q8a-2" /> push()</label></li>
+              <li><label><input type="radio" name="q8a-2" /> pop()</label></li>
+              <li><label><input type="radio" name="q8a-2" /> unshift()</label></li>
+              <li><label><input type="radio" name="q8a-2" /> shift()</label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>3.</strong> What does <code>arr.length</code> return?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q8a-3" /> The number of elements in the array</label></li>
+              <li><label><input type="radio" name="q8a-3" /> The index of the last element only</label></li>
+              <li><label><input type="radio" name="q8a-3" /> The memory size of the array in bytes</label></li>
+              <li><label><input type="radio" name="q8a-3" /> The data type of the first element</label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>4.</strong> What does <code>array.map(fn)</code> return?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q8a-4" /> A new array with each element transformed</label></li>
+              <li><label><input type="radio" name="q8a-4" /> A new array with only matching elements</label></li>
+              <li><label><input type="radio" name="q8a-4" /> A single accumulated value</label></li>
+              <li><label><input type="radio" name="q8a-4" /> The same array modified in place</label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>5.</strong> Which creates an array of objects?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q8a-5" /> <code>[{ name: "Ada" }, { name: "Bob" }]</code></label></li>
+              <li><label><input type="radio" name="q8a-5" /> <code>{ name: "Ada", name: "Bob" }</code></label></li>
+              <li><label><input type="radio" name="q8a-5" /> <code>("Ada", "Bob")</code></label></li>
+              <li><label><input type="radio" name="q8a-5" /> <code>&lt;array&gt;Ada&lt;/array&gt;</code></label></li>
+            </ul>
+          </div>
+          <details class="quiz-answers">
+            <summary>View Answer Key</summary>
+            <ol>
+              <li><strong>A</strong> — Arrays are zero-indexed.</li>
+              <li><strong>A</strong> — push adds to end.</li>
+              <li><strong>A</strong> — length is element count.</li>
+              <li><strong>A</strong> — map transforms each element.</li>
+              <li><strong>A</strong> — Square brackets with objects.</li>
+            </ol>
+          </details>
+        </div>
+      </section>
+
+
+      <!-- LESSON 09 — TODO LIST PROJECT -->
+      <section class="lesson" id="todo">
+        <div class="lesson-header">
+          <div class="lesson-num">Lesson 09</div>
+          <div class="lesson-title-group">
+            <h2>Todo List Project</h2>
+            <span class="subtitle">Console-only app using prompt, alert, and arrays</span>
+          </div>
+        </div>
+
+        <h3>Project Overview</h3>
+        <p>
+          Build a fully working Todo app using <strong>only JavaScript</strong> — no HTML manipulation required.
+          Commands: <code>add</code>, <code>list</code>, <code>delete</code>, <code>quit</code>.
+          This project combines variables, arrays, strings, conditionals, and loops.
+        </p>
+
+        <h3>Starter Structure</h3>
+        <pre data-lang="JavaScript"><code>let todos = [];
+let running = true;
+
+alert("Welcome to Todo App!\nCommands: add, list, delete, quit");
+
+while (running) {
+  let command = prompt("Enter command (add / list / delete / quit):");
+
+  if (command === null) {
+    alert("Goodbye!");
+    break;
+  }
+
+  command = command.toLowerCase().trim();
+
+  // Handle each command here with if / else if
+}</code></pre>
+
+        <h3>Full Solution</h3>
+        <details class="code-answer">
+          <summary>View Full Code</summary>
+          <pre data-lang="JavaScript"><code>let todos = [];
+let running = true;
+
+alert("Welcome to Todo App!\nCommands: add, list, delete, quit");
+
+while (running) {
+  let command = prompt("Enter command (add / list / delete / quit):");
+
+  if (command === null) {
+    alert("Goodbye!");
+    break;
+  }
+
+  command = command.toLowerCase().trim();
+
+  if (command === "add") {
+    let task = prompt("Enter task to add:");
+    if (task && task.trim() !== "") {
+      todos.push(task.trim());
+      alert("Task added!");
+      console.log("Added:", task);
+    } else {
+      alert("Task cannot be empty.");
+    }
+
+  } else if (command === "list") {
+    if (todos.length === 0) {
+      alert("No tasks yet.");
+      console.log("Todo list is empty.");
+    } else {
+      let list = "Your Tasks:\n";
+      for (let i = 0; i < todos.length; i++) {
+        list += (i + 1) + ". " + todos[i] + "\n";
+      }
+      alert(list);
+      console.log(list);
+    }
+
+  } else if (command === "delete") {
+    if (todos.length === 0) {
+      alert("Nothing to delete.");
+    } else {
+      let list = "Which task to delete?\n";
+      for (let i = 0; i < todos.length; i++) {
+        list += (i + 1) + ". " + todos[i] + "\n";
+      }
+      let index = prompt(list + "Enter number:");
+      let num = Number(index);
+
+      if (num >= 1 && num <= todos.length) {
+        let removed = todos.splice(num - 1, 1);
+        alert("Deleted: " + removed[0]);
+        console.log("Deleted:", removed[0]);
+      } else {
+        alert("Invalid number.");
+      }
+    }
+
+  } else if (command === "quit") {
+    alert("Thanks for using Todo App!");
+    running = false;
+
+  } else {
+    alert("Unknown command. Use: add, list, delete, quit");
+  }
+}</code></pre>
+        </details>
+
+        <h3>Concepts Used</h3>
+        <ul>
+          <li><strong>Variables:</strong> <code>todos</code> array, <code>running</code> flag</li>
+          <li><strong>Arrays:</strong> push, splice, length, indexing</li>
+          <li><strong>Conditionals:</strong> if / else if / else chains</li>
+          <li><strong>Loops:</strong> while for the app, for to display list</li>
+          <li><strong>I/O:</strong> prompt, alert, console.log</li>
+          <li><strong>Strings:</strong> trim, toLowerCase, concatenation</li>
+        </ul>
+
+        <hr class="section-divider" />
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 9.1</div>
+          <h5>Build It Yourself</h5>
+          <ol>
+            <li>Create <code>todo.js</code> and link it to a blank HTML page</li>
+            <li>Implement all four commands without looking at the solution</li>
+            <li>Test: add 3 tasks, list them, delete one, list again, quit</li>
+          </ol>
+        </div>
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 9.2</div>
+          <h5>Enhancements (Optional)</h5>
+          <ol>
+            <li>Add an <code>edit</code> command to change a task by number</li>
+            <li>Add a <code>clear</code> command to remove all tasks</li>
+            <li>Refactor repeated "display list" code into a function</li>
+          </ol>
+        </div>
+
+        <div class="exercise-block quiz" data-quiz-id="todo">
+          <div class="block-label">🎯 Quiz 9</div>
+          <h5>Lesson 9 — Knowledge Check (5 Questions)</h5>
+          <button type="button" class="btn-present-quiz" onclick="presentQuiz(this)">📸 Present Quiz for Screenshot</button>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>1.</strong> Which array method adds a task to the end of the list?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q9t-1" /> push()</label></li>
+              <li><label><input type="radio" name="q9t-1" /> pop()</label></li>
+              <li><label><input type="radio" name="q9t-1" /> splice()</label></li>
+              <li><label><input type="radio" name="q9t-1" /> shift()</label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>2.</strong> Why use a <code>while (running)</code> loop?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q9t-2" /> To keep the app running until the user quits</label></li>
+              <li><label><input type="radio" name="q9t-2" /> To loop through each task in the array once</label></li>
+              <li><label><input type="radio" name="q9t-2" /> To convert strings to numbers automatically</label></li>
+              <li><label><input type="radio" name="q9t-2" /> To prevent the browser from showing alerts</label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>3.</strong> What does <code>command.toLowerCase().trim()</code> do?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q9t-3" /> Normalizes input to lowercase and removes extra spaces</label></li>
+              <li><label><input type="radio" name="q9t-3" /> Converts the command to a number for comparison</label></li>
+              <li><label><input type="radio" name="q9t-3" /> Deletes the command from memory after use</label></li>
+              <li><label><input type="radio" name="q9t-3" /> Splits the command into an array of characters</label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>4.</strong> Which method removes a task at a specific index?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q9t-4" /> splice(index, 1)</label></li>
+              <li><label><input type="radio" name="q9t-4" /> push(index)</label></li>
+              <li><label><input type="radio" name="q9t-4" /> delete todos[index]</label></li>
+              <li><label><input type="radio" name="q9t-4" /> removeAt(index)</label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>5.</strong> Why check <code>command === null</code>?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q9t-5" /> User clicked Cancel on the prompt dialog</label></li>
+              <li><label><input type="radio" name="q9t-5" /> The todos array is empty</label></li>
+              <li><label><input type="radio" name="q9t-5" /> A syntax error occurred in the script</label></li>
+              <li><label><input type="radio" name="q9t-5" /> The while loop reached its limit</label></li>
+            </ul>
+          </div>
+          <details class="quiz-answers">
+            <summary>View Answer Key</summary>
+            <ol>
+              <li><strong>A</strong> — push adds to end.</li>
+              <li><strong>A</strong> — while keeps app alive.</li>
+              <li><strong>A</strong> — normalize user input.</li>
+              <li><strong>A</strong> — splice removes at index.</li>
+              <li><strong>A</strong> — Cancel returns null.</li>
+            </ol>
+          </details>
+        </div>
+      </section>
+
+
+      <!-- ══════════════════════════════
+       LESSON 7 — CONDITIONALS & LOOPING
+  ══════════════════════════════ -->
+      <section class="lesson" id="control">
+        <div class="lesson-header">
+          <div class="lesson-num">Lesson 10</div>
+          <div class="lesson-title-group">
+            <h2>Conditionals &amp; Looping</h2>
+            <span class="subtitle">Making decisions and repeating actions</span>
+          </div>
+        </div>
+
+        <h3>if / else if / else</h3>
+        <p>Control flow lets your program make decisions based on conditions.</p>
+        <pre data-lang="JavaScript"><code>const score = 85;
+
+if (score >= 90) {
+  console.log("Grade: A");
+} else if (score >= 80) {
+  console.log("Grade: B");
+} else if (score >= 70) {
+  console.log("Grade: C");
+} else {
+  console.log("Grade: F — keep practicing!");
+}</code></pre>
+
+        <h3>Ternary Operator</h3>
+        <pre data-lang="JavaScript"><code>const age = 17;
+const status = age >= 18 ? "Adult" : "Minor";
+console.log(status); // "Minor"
+
+// Shorthand for simple if/else assignments
+const message = isLoggedIn ? "Welcome back!" : "Please sign in";</code></pre>
+
+        <h3>switch Statement</h3>
+        <pre data-lang="JavaScript"><code>const day = "Monday";
+
+switch (day) {
+  case "Monday":
+    console.log("Start of the work week");
+    break;
+  case "Friday":
+    console.log("Almost weekend!");
+    break;
+  case "Saturday":
+  case "Sunday":
+    console.log("Enjoy your weekend!");
+    break;
+  default:
+    console.log("Regular weekday");
+}</code></pre>
+
+        <h3>for Loop</h3>
+        <pre data-lang="JavaScript"><code>// Classic for loop — when you know how many iterations
+for (let i = 0; i < 5; i++) {
+  console.log("Iteration:", i);
+}
+
+// Loop through array with index
+const items = ["pen", "book", "bag"];
+for (let i = 0; i < items.length; i++) {
+  console.log(i, items[i]);
+}</code></pre>
+
+        <h3>while and do...while Loops</h3>
+        <pre data-lang="JavaScript"><code>// while — checks condition BEFORE each iteration
+let count = 0;
+while (count < 3) {
+  console.log("while:", count);
+  count++;
+}
+
+// do...while — runs AT LEAST once
+let num = 0;
+do {
+  console.log("do-while:", num);
+  num++;
+} while (num < 3);</code></pre>
+
+        <h3>break and continue</h3>
+        <pre data-lang="JavaScript"><code>// break — exit the loop entirely
+for (let i = 0; i < 10; i++) {
+  if (i === 5) break;
+  console.log(i); // 0, 1, 2, 3, 4
+}
+
+// continue — skip to next iteration
+for (let i = 0; i < 5; i++) {
+  if (i === 2) continue;
+  console.log(i); // 0, 1, 3, 4
+}</code></pre>
+
+        <h3>Nested Loops and Conditions</h3>
+        <pre data-lang="JavaScript"><code>// Multiplication table (nested loops)
+for (let i = 1; i <= 3; i++) {
+  let row = "";
+  for (let j = 1; j <= 3; j++) {
+    row += (i * j) + "\t";
+  }
+  console.log(row);
+}
+
+// Combining conditionals inside loops
+const temperatures = [18, 25, 32, 15, 28];
+for (let temp of temperatures) {
+  if (temp > 30) {
+    console.log(temp + "°C — Hot day!");
+  } else if (temp < 20) {
+    console.log(temp + "°C — Cool day");
+  } else {
+    console.log(temp + "°C — Pleasant");
+  }
+}</code></pre>
+
+        <div class="info-box info-tip">
+          <span class="icon">✅</span>
+          <div class="content">
+            <strong>When to Use What</strong>
+            <p>
+              Use <code>for</code> when you know the iteration count.
+              Use <code>while</code> when the loop depends on a condition that may change.
+              Use <code>for...of</code> or <code>forEach</code> for iterating arrays cleanly.
+            </p>
+          </div>
+        </div>
+
+        <hr class="section-divider" />
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 7.1</div>
+          <h5>FizzBuzz Classic</h5>
+          <ol>
+            <li>Loop from 1 to 30 using a <code>for</code> loop</li>
+            <li>If divisible by 3, print "Fizz"</li>
+            <li>If divisible by 5, print "Buzz"</li>
+            <li>If divisible by both, print "FizzBuzz"</li>
+            <li>Otherwise print the number</li>
+          </ol>
+        </div>
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 7.2</div>
+          <h5>Password Strength Checker</h5>
+          <ol>
+            <li>Prompt the user for a password</li>
+            <li>Use <code>if/else if/else</code> to rate it: Weak (&lt;6 chars), Medium (6–10), Strong (&gt;10)</li>
+            <li>Use a <code>switch</code> to display a tip message for each rating</li>
+            <li>Log whether the password contains a number using a loop over characters</li>
+          </ol>
+        </div>
+
+        <div class="exercise-block quiz">
+          <div class="block-label">🎯 Quiz 10</div>
+          <h5>Lesson 10 — Knowledge Check (5 Questions)</h5>
+          <button type="button" class="btn-present-quiz" onclick="presentQuiz(this)">📸 Present Quiz for Screenshot</button>
+          <p>Select the best answer for each question. Options are designed to look similar — read carefully.</p>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>1.</strong> What does the <code>break</code> statement do inside a loop?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q7-1" /> Exits the loop immediately</label></li>
+              <li><label><input type="radio" name="q7-1" /> Skips the current iteration and continues</label></li>
+              <li><label><input type="radio" name="q7-1" /> Pauses the loop until the user clicks resume</label></li>
+              <li><label><input type="radio" name="q7-1" /> Restarts the loop from the first iteration</label></li>
+            </ul>
+          </div>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>2.</strong> What is the output of: <code>const x = 15; const r = x &gt; 10 ? "big" : "small";</code></p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q7-2" /> <code>"big"</code></label></li>
+              <li><label><input type="radio" name="q7-2" /> <code>"small"</code></label></li>
+              <li><label><input type="radio" name="q7-2" /> <code>true</code></label></li>
+              <li><label><input type="radio" name="q7-2" /> <code>15</code></label></li>
+            </ul>
+          </div>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>3.</strong> Why do you need <code>break</code> in a <code>switch</code> statement?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q7-3" /> To prevent fall-through into the next case block</label></li>
+              <li><label><input type="radio" name="q7-3" /> To prevent the switch from running at all</label></li>
+              <li><label><input type="radio" name="q7-3" /> To convert the switch into an if/else chain</label></li>
+              <li><label><input type="radio" name="q7-3" /> To skip only the default case at the end</label></li>
+            </ul>
+          </div>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>4.</strong> How many times does this loop run? <code>for (let i = 0; i &lt; 4; i++) { }</code></p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q7-4" /> 4 times (i = 0, 1, 2, 3)</label></li>
+              <li><label><input type="radio" name="q7-4" /> 5 times (i = 0, 1, 2, 3, 4)</label></li>
+              <li><label><input type="radio" name="q7-4" /> 3 times (i = 1, 2, 3)</label></li>
+              <li><label><input type="radio" name="q7-4" /> Infinite loop until manually stopped</label></li>
+            </ul>
+          </div>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>5.</strong> What is the key difference between <code>while</code> and <code>do...while</code>?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q7-5" /> <code>do...while</code> always runs the body at least once</label></li>
+              <li><label><input type="radio" name="q7-5" /> <code>while</code> always runs the body at least once</label></li>
+              <li><label><input type="radio" name="q7-5" /> <code>do...while</code> can only loop over arrays</label></li>
+              <li><label><input type="radio" name="q7-5" /> There is no difference — they are identical</label></li>
+            </ul>
+          </div>
+
+          <details class="quiz-answers">
+            <summary>View Answer Key</summary>
+            <ol>
+              <li><strong>A</strong> — break exits the loop.</li>
+              <li><strong>A</strong> — 15 > 10 is true, so result is "big".</li>
+              <li><strong>A</strong> — break prevents fall-through to next case.</li>
+              <li><strong>A</strong> — i runs 0 through 3 (4 iterations).</li>
+              <li><strong>A</strong> — do...while checks condition after first run.</li>
+            </ol>
+          </details>
         </div>
       </section>
 
@@ -338,7 +2033,7 @@ console.log(firstname);</code></pre>
   ══════════════════════════════ -->
       <section class="lesson" id="dom">
         <div class="lesson-header">
-          <div class="lesson-num">Lesson 03</div>
+          <div class="lesson-num">Lesson 11</div>
           <div class="lesson-title-group">
             <h2>Document and Browser Object Models</h2>
             <span class="subtitle">Interacting with the webpage and browser</span>
@@ -500,24 +2195,564 @@ setInterval(() => {
           </ol>
         </div>
 
-        <div class="exercise-block assessment">
-          <div class="block-label">📝 Assessment 3</div>
-          <h5>Chapter 3 Knowledge Check</h5>
-          <ol>
-            <li>What is the DOM and why is it important?</li>
-            <li>What is the difference between <code>textContent</code> and <code>innerHTML</code>?</li>
-            <li>What is the difference between <code>querySelector()</code> and <code>querySelectorAll()</code>?</li>
-            <li>Name three properties or methods of the <code>window</code> object.</li>
-            <li>How do you create and add a new element to the page?</li>
-            <li><strong>Practical:</strong> Create a page with a heading, paragraph, and button. 
-            When the button is clicked, change the heading text, change the paragraph color to red, 
-            and create a new div with some text that gets appended to the body.</li>
-          </ol>
+        <div class="exercise-block quiz">
+          <div class="block-label">🎯 Quiz 11</div>
+          <h5>Lesson 11 — Knowledge Check (5 Questions)</h5>
+          <button type="button" class="btn-present-quiz" onclick="presentQuiz(this)">📸 Present Quiz for Screenshot</button>
+          <p>Select the best answer for each question. Options are designed to look similar — read carefully.</p>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>1.</strong> What is the Document Object Model (DOM)?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q3-1" /> A tree-like representation of HTML that JavaScript can read and modify</label></li>
+              <li><label><input type="radio" name="q3-1" /> A CSS framework for styling HTML elements on a page</label></li>
+              <li><label><input type="radio" name="q3-1" /> A database format for storing website content offline</label></li>
+              <li><label><input type="radio" name="q3-1" /> A server-side language for building REST APIs</label></li>
+            </ul>
+          </div>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>2.</strong> What is the key difference between <code>textContent</code> and <code>innerHTML</code>?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q3-2" /> <code>textContent</code> sets plain text; <code>innerHTML</code> parses and inserts HTML markup</label></li>
+              <li><label><input type="radio" name="q3-2" /> <code>textContent</code> inserts HTML markup; <code>innerHTML</code> sets plain text only</label></li>
+              <li><label><input type="radio" name="q3-2" /> <code>textContent</code> works on inputs; <code>innerHTML</code> works on images only</label></li>
+              <li><label><input type="radio" name="q3-2" /> <code>textContent</code> is deprecated; <code>innerHTML</code> is the modern replacement</label></li>
+            </ul>
+          </div>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>3.</strong> How does <code>querySelector()</code> differ from <code>querySelectorAll()</code>?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q3-3" /> <code>querySelector()</code> returns the first match; <code>querySelectorAll()</code> returns all matches</label></li>
+              <li><label><input type="radio" name="q3-3" /> <code>querySelector()</code> returns all matches; <code>querySelectorAll()</code> returns the first match</label></li>
+              <li><label><input type="radio" name="q3-3" /> <code>querySelector()</code> selects by ID only; <code>querySelectorAll()</code> selects by class only</label></li>
+              <li><label><input type="radio" name="q3-3" /> <code>querySelector()</code> is synchronous; <code>querySelectorAll()</code> is always asynchronous</label></li>
+            </ul>
+          </div>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>4.</strong> Which code correctly creates a new paragraph and adds it to the page?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q3-4" /> <code>let p = document.createElement("p"); p.textContent = "Hi"; document.body.appendChild(p);</code></label></li>
+              <li><label><input type="radio" name="q3-4" /> <code>let p = document.createParagraph("p"); p.text = "Hi"; document.body.add(p);</code></label></li>
+              <li><label><input type="radio" name="q3-4" /> <code>let p = document.newElement("p"); p.innerText = "Hi"; document.body.insert(p);</code></label></li>
+              <li><label><input type="radio" name="q3-4" /> <code>let p = document.makeNode("p"); p.value = "Hi"; document.body.push(p);</code></label></li>
+            </ul>
+          </div>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>5.</strong> Which <code>window</code> method asks the user to type a text response?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q3-5" /> <code>prompt()</code></label></li>
+              <li><label><input type="radio" name="q3-5" /> <code>alert()</code></label></li>
+              <li><label><input type="radio" name="q3-5" /> <code>confirm()</code></label></li>
+              <li><label><input type="radio" name="q3-5" /> <code>console.log()</code></label></li>
+            </ul>
+          </div>
+
+          <details class="quiz-answers">
+            <summary>View Answer Key</summary>
+            <ol>
+              <li><strong>A</strong> — The DOM is a tree representation of the HTML document.</li>
+              <li><strong>A</strong> — textContent is plain text; innerHTML parses HTML.</li>
+              <li><strong>A</strong> — querySelector gets first match; querySelectorAll gets all.</li>
+              <li><strong>A</strong> — createElement + textContent + appendChild is correct.</li>
+              <li><strong>A</strong> — prompt() collects user text input.</li>
+            </ol>
+          </details>
         </div>
       </section>
 
-      <!-- Continue with remaining lessons... -->
+      <!-- ══════════════════════════════
+       LESSON 4 — EVENT-DRIVEN PROGRAMMING
+  ══════════════════════════════ -->
+      <section class="lesson" id="events">
+        <div class="lesson-header">
+          <div class="lesson-num">Lesson 12</div>
+          <div class="lesson-title-group">
+            <h2>Event-driven Programming</h2>
+            <span class="subtitle">Responding to user actions and browser events</span>
+          </div>
+        </div>
+
+        <h3>What Is Event-driven Programming?</h3>
+        <p>
+          Modern websites don't just display static content — they <strong>react</strong> to what users do.
+          <strong>Event-driven programming</strong> means your code waits for something to happen (a click, key press, form submit, page load)
+          and then runs a function in response. This is the foundation of every interactive web application.
+        </p>
+
+        <h3>Common Browser Events</h3>
+        <table class="ref-table">
+          <tr><th>Event</th><th>Fires When…</th></tr>
+          <tr><td><code>click</code></td><td>User clicks an element</td></tr>
+          <tr><td><code>dblclick</code></td><td>User double-clicks an element</td></tr>
+          <tr><td><code>mouseenter</code> / <code>mouseleave</code></td><td>Mouse enters or leaves an element</td></tr>
+          <tr><td><code>keydown</code> / <code>keyup</code></td><td>User presses or releases a key</td></tr>
+          <tr><td><code>input</code></td><td>Value of an input field changes</td></tr>
+          <tr><td><code>submit</code></td><td>A form is submitted</td></tr>
+          <tr><td><code>load</code></td><td>Page or resource finishes loading</td></tr>
+          <tr><td><code>DOMContentLoaded</code></td><td>HTML is fully parsed (before images load)</td></tr>
+          <tr><td><code>scroll</code></td><td>User scrolls the page or an element</td></tr>
+        </table>
+
+        <h3>Inline Event Handlers (Avoid in Production)</h3>
+        <pre data-lang="HTML"><code><span class="tag">&lt;button <span class="attr">onclick</span>=<span class="val">"alert('Clicked!')"</span>&gt;</span><span class="text-node">Click</span><span class="tag">&lt;/button&gt;</span></code></pre>
+        <p>Inline handlers mix HTML and JavaScript. They work for learning, but professional code separates concerns.</p>
+
+        <h3>addEventListener — The Professional Approach</h3>
+        <pre data-lang="JavaScript"><code>// Select the element
+let btn = document.querySelector("#myButton");
+
+// Attach an event listener
+btn.addEventListener("click", function () {
+  console.log("Button was clicked!");
+});
+
+// Arrow function syntax (modern)
+btn.addEventListener("click", () => {
+  alert("Hello from the button!");
+});</code></pre>
+
+        <h3>The Event Object</h3>
+        <p>When an event fires, the browser passes an <strong>event object</strong> containing useful information.</p>
+        <pre data-lang="JavaScript"><code>document.querySelector("input").addEventListener("keydown", function (event) {
+  console.log("Key pressed:", event.key);
+  console.log("Target element:", event.target);
+});
+
+document.querySelector("a").addEventListener("click", function (event) {
+  event.preventDefault(); // Stops the link from navigating
+  console.log("Link click intercepted");
+});</code></pre>
+
+        <h3>Event Propagation: Bubbling and Capturing</h3>
+        <p>
+          Events travel through the DOM in two phases. In the <strong>bubbling</strong> phase, the event starts at the
+          innermost element and moves up to <code>document</code>. In <strong>capturing</strong>, it travels downward first.
+          By default, listeners run during the bubbling phase.
+        </p>
+        <pre data-lang="JavaScript"><code>let parent = document.querySelector(".parent");
+let child = document.querySelector(".child");
+
+parent.addEventListener("click", () => console.log("Parent clicked"));
+child.addEventListener("click", () => console.log("Child clicked"));
+// Clicking child logs: "Child clicked" then "Parent clicked"
+
+child.addEventListener("click", (e) => {
+  e.stopPropagation(); // Prevents event from reaching parent
+});</code></pre>
+
+        <h3>Multiple Listeners on One Element</h3>
+        <pre data-lang="JavaScript"><code>let card = document.querySelector(".card");
+
+card.addEventListener("mouseenter", () => {
+  card.style.transform = "scale(1.02)";
+});
+
+card.addEventListener("mouseleave", () => {
+  card.style.transform = "scale(1)";
+});
+
+card.addEventListener("click", () => {
+  card.classList.toggle("selected");
+});</code></pre>
+
+        <h3>Waiting for the DOM to Load</h3>
+        <pre data-lang="JavaScript"><code>document.addEventListener("DOMContentLoaded", function () {
+  // Safe to query and manipulate elements here
+  let heading = document.querySelector("h1");
+  heading.textContent = "Page is ready!";
+});</code></pre>
+
+        <div class="info-box info-tip">
+          <span class="icon">✅</span>
+          <div class="content">
+            <strong>Instructor Tip</strong>
+            <p>
+              Always use <code>addEventListener</code> instead of inline <code>onclick</code> attributes.
+              You can attach multiple handlers, remove them later, and keep your HTML clean.
+            </p>
+          </div>
+        </div>
+
+        <hr class="section-divider" />
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 4.1</div>
+          <h5>Click Counter</h5>
+          <ol>
+            <li>Create a button and a paragraph showing "Clicks: 0"</li>
+            <li>Use <code>addEventListener</code> to listen for clicks on the button</li>
+            <li>Increment the counter and update the paragraph text on each click</li>
+            <li>Change the button background color after 10 clicks</li>
+          </ol>
+        </div>
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 4.2</div>
+          <h5>Live Input Preview</h5>
+          <ol>
+            <li>Create a text input and an empty <code>&lt;p id="preview"&gt;</code></li>
+            <li>Listen for the <code>input</code> event on the text field</li>
+            <li>Display the typed text in the preview paragraph in real time</li>
+            <li>If the input is empty, show "Type something…" as placeholder text</li>
+          </ol>
+        </div>
+
+        <div class="exercise-block quiz">
+          <div class="block-label">🎯 Quiz 12</div>
+          <h5>Lesson 12 — Knowledge Check (5 Questions)</h5>
+          <button type="button" class="btn-present-quiz" onclick="presentQuiz(this)">📸 Present Quiz for Screenshot</button>
+          <p>Select the best answer for each question. Options are designed to look similar — read carefully.</p>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>1.</strong> What does event-driven programming mean in JavaScript?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q4-1" /> Code runs in response to user actions or browser events</label></li>
+              <li><label><input type="radio" name="q4-1" /> Code runs automatically every second on a fixed timer</label></li>
+              <li><label><input type="radio" name="q4-1" /> Code runs only once when the page first loads</label></li>
+              <li><label><input type="radio" name="q4-1" /> Code runs in response to server database changes only</label></li>
+            </ul>
+          </div>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>2.</strong> Which method is the recommended way to attach a click handler?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q4-2" /> <code>element.addEventListener("click", handler)</code></label></li>
+              <li><label><input type="radio" name="q4-2" /> <code>element.onclick = "handler()"</code> as a string in HTML</label></li>
+              <li><label><input type="radio" name="q4-2" /> <code>element.attachClick(handler)</code></label></li>
+              <li><label><input type="radio" name="q4-2" /> <code>element.on("click", handler)</code></label></li>
+            </ul>
+          </div>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>3.</strong> What does <code>event.preventDefault()</code> do?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q4-3" /> Stops the browser's default action for that event</label></li>
+              <li><label><input type="radio" name="q4-3" /> Stops all other event listeners from running</label></li>
+              <li><label><input type="radio" name="q4-3" /> Stops the event from bubbling up the DOM tree</label></li>
+              <li><label><input type="radio" name="q4-3" /> Stops the JavaScript engine from parsing the page</label></li>
+            </ul>
+          </div>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>4.</strong> During event bubbling, in what order do handlers fire when you click a child inside a parent?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q4-4" /> Child handler first, then parent handler</label></li>
+              <li><label><input type="radio" name="q4-4" /> Parent handler first, then child handler</label></li>
+              <li><label><input type="radio" name="q4-4" /> Only the child handler fires, never the parent</label></li>
+              <li><label><input type="radio" name="q4-4" /> Only the parent handler fires, never the child</label></li>
+            </ul>
+          </div>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>5.</strong> Which event fires when the HTML document is fully parsed and ready to manipulate?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q4-5" /> <code>DOMContentLoaded</code></label></li>
+              <li><label><input type="radio" name="q4-5" /> <code>window.onload</code> only after every image loads</label></li>
+              <li><label><input type="radio" name="q4-5" /> <code>beforeunload</code></label></li>
+              <li><label><input type="radio" name="q4-5" /> <code>resize</code></label></li>
+            </ul>
+          </div>
+
+          <details class="quiz-answers">
+            <summary>View Answer Key</summary>
+            <ol>
+              <li><strong>A</strong> — Event-driven code reacts to actions and events.</li>
+              <li><strong>A</strong> — addEventListener is the standard approach.</li>
+              <li><strong>A</strong> — preventDefault stops default browser behavior.</li>
+              <li><strong>A</strong> — Bubbling goes from child to parent.</li>
+              <li><strong>A</strong> — DOMContentLoaded fires when HTML is parsed.</li>
+            </ol>
+          </details>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════
+       LESSON 6 — OBJECTS AND ARRAYS
+  ══════════════════════════════ -->
+      <section class="lesson" id="objects">
+        <div class="lesson-header">
+          <div class="lesson-num">Lesson 13</div>
+          <div class="lesson-title-group">
+            <h2>Objects &amp; Form Validation</h2>
+            <span class="subtitle">Objects, JSON, and validating forms</span>
+          </div>
+        </div>
+
+        <h3>What Is an Object?</h3>
+        <p>
+          An <strong>object</strong> stores related data as <strong>key-value pairs</strong> (properties).
+          Think of it as a labeled container — a user profile, a product, or a car registration all map naturally to objects.
+        </p>
+        <pre data-lang="JavaScript"><code>const student = {
+  firstName: "Amara",
+  lastName: "Bello",
+  age: 22,
+  isEnrolled: true,
+  courses: ["HTML", "CSS", "JavaScript"]
+};
+
+// Access properties
+console.log(student.firstName);      // Dot notation
+console.log(student["lastName"]);    // Bracket notation
+
+// Add or update properties
+student.email = "amara@school.com";
+student.age = 23;
+
+// Delete a property
+delete student.isEnrolled;</code></pre>
+
+        <h3>Object Methods</h3>
+        <pre data-lang="JavaScript"><code>const calculator = {
+  value: 0,
+  add(n) {
+    this.value += n;
+    return this;
+  },
+  reset() {
+    this.value = 0;
+  }
+};
+
+calculator.add(5).add(3);
+console.log(calculator.value); // 8</code></pre>
+
+        
+        <h3>Looping Through Objects</h3>
+        <pre data-lang="JavaScript"><code>const user = { name: "Chidi", role: "developer", level: 2 };
+
+// for...in — object properties
+for (let key in user) {
+  console.log(key + ": " + user[key]);
+}</code></pre>
+
+        <h3>JSON — Storing and Sharing Data</h3>
+        <pre data-lang="JavaScript"><code>const product = { id: 1, name: "Laptop", price: 450000 };
+
+// Object → JSON string (for APIs, localStorage)
+const jsonString = JSON.stringify(product);
+console.log(jsonString); // '{"id":1,"name":"Laptop","price":450000}'
+
+// JSON string → Object
+const parsed = JSON.parse(jsonString);
+console.log(parsed.name); // "Laptop"</code></pre>
+
+        <div class="info-box info-note">
+          <span class="icon">💡</span>
+          <div class="content">
+            <strong>Instructor Tip</strong>
+            <p>
+              Use objects when you need labeled fields (a person, a settings config).
+              Use arrays when you need an ordered list (search results, menu items).
+            </p>
+          </div>
+        </div>
+
+        <h3>Form Validation — A Real-world Application</h3>
+        <p>Validating forms before submission is one of the most common uses of JavaScript in frontend development.</p>
+        <pre data-lang="HTML"><code><span class="tag">&lt;form <span class="attr">id</span>=<span class="val">"signupForm"</span>&gt;</span>
+  <span class="tag">&lt;input <span class="attr">type</span>=<span class="val">"text"</span> <span class="attr">id</span>=<span class="val">"username"</span> <span class="attr">placeholder</span>=<span class="val">"Username"</span>&gt;</span>
+  <span class="tag">&lt;input <span class="attr">type</span>=<span class="val">"email"</span> <span class="attr">id</span>=<span class="val">"email"</span> <span class="attr">placeholder</span>=<span class="val">"Email"</span>&gt;</span>
+  <span class="tag">&lt;input <span class="attr">type</span>=<span class="val">"password"</span> <span class="attr">id</span>=<span class="val">"password"</span> <span class="attr">placeholder</span>=<span class="val">"Password"</span>&gt;</span>
+  <span class="tag">&lt;p <span class="attr">id</span>=<span class="val">"errorMsg"</span> <span class="attr">style</span>=<span class="val">"color:red"</span>&gt;&lt;/p&gt;</span>
+  <span class="tag">&lt;button <span class="attr">type</span>=<span class="val">"submit"</span>&gt;</span><span class="text-node">Sign Up</span><span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;/form&gt;</span></code></pre>
+
+        <pre data-lang="JavaScript"><code>function validateEmail(email) {
+  return email.includes("@") && email.includes(".");
+}
+
+function validatePassword(password) {
+  return password.length >= 8;
+}
+
+function validateUsername(username) {
+  return username.trim().length >= 3;
+}
+
+function showError(message) {
+  document.getElementById("errorMsg").textContent = message;
+}
+
+document.getElementById("signupForm").addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const username = document.getElementById("username").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  if (!validateUsername(username)) {
+    showError("Username must be at least 3 characters.");
+    return;
+  }
+  if (!validateEmail(email)) {
+    showError("Please enter a valid email address.");
+    return;
+  }
+  if (!validatePassword(password)) {
+    showError("Password must be at least 8 characters.");
+    return;
+  }
+
+  showError("");
+  alert("Account created successfully!");
+});</code></pre>
+
+        <div class="info-box info-warn">
+          <span class="icon">⚠️</span>
+          <div class="content">
+            <strong>Security Note</strong>
+            <p>Never rely on JavaScript validation alone. Always validate on the server too.</p>
+          </div>
+        </div>
+
+        <hr class="section-divider" />
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 13.1</div>
+          <h5>Student Record</h5>
+          <ol>
+            <li>Create an object representing a student with at least 5 properties</li>
+            <li>Log each property using a <code>for...in</code> loop</li>
+            <li>Add a method <code>getFullName()</code> that returns first + last name</li>
+            <li>Convert the object to JSON and log the string</li>
+          </ol>
+        </div>
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 13.2</div>
+          <h5>Contact Form Validator</h5>
+          <ol>
+            <li>Build an HTML form with name, email, phone, and message fields</li>
+            <li>Create separate validation functions for each field</li>
+            <li>On submit, prevent default and run all validators</li>
+            <li>Display field-specific error messages below each input</li>
+            <li>Show a success alert when all fields pass</li>
+          </ol>
+        </div>
+
+        <div class="exercise-block quiz" data-quiz-id="objects">
+          <div class="block-label">🎯 Quiz 13</div>
+          <h5>Lesson 13 — Knowledge Check (5 Questions)</h5>
+          <button type="button" class="btn-present-quiz" onclick="presentQuiz(this)">📸 Present Quiz for Screenshot</button>
+          <p>Select the best answer for each question. Options are designed to look similar — read carefully.</p>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>1.</strong> How do you access the property <code>email</code> on object <code>user</code>?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q6-1" /> <code>user.email</code> or <code>user["email"]</code></label></li>
+              <li><label><input type="radio" name="q6-1" /> <code>user-&gt;email</code> or <code>user::email</code></label></li>
+              <li><label><input type="radio" name="q6-1" /> <code>user[email]</code> without quotes around email</label></li>
+              <li><label><input type="radio" name="q6-1" /> <code>get(user, "email")</code> only</label></li>
+            </ul>
+          </div>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>2.</strong> What index is the <strong>first</strong> element in a JavaScript array?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q6-2" /> <code>0</code></label></li>
+              <li><label><input type="radio" name="q6-2" /> <code>1</code></label></li>
+              <li><label><input type="radio" name="q6-2" /> <code>-1</code></label></li>
+              <li><label><input type="radio" name="q6-2" /> Depends on the array length</label></li>
+            </ul>
+          </div>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>3.</strong> Which method adds an element to the <strong>end</strong> of an array?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q6-3" /> <code>push()</code></label></li>
+              <li><label><input type="radio" name="q6-3" /> <code>pop()</code></label></li>
+              <li><label><input type="radio" name="q6-3" /> <code>unshift()</code></label></li>
+              <li><label><input type="radio" name="q6-3" /> <code>shift()</code></label></li>
+            </ul>
+          </div>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>4.</strong> What does <code>array.map(fn)</code> return?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q6-4" /> A new array with each element transformed by the function</label></li>
+              <li><label><input type="radio" name="q6-4" /> A new array with only elements that pass a test</label></li>
+              <li><label><input type="radio" name="q6-4" /> A single accumulated value from all elements</label></li>
+              <li><label><input type="radio" name="q6-4" /> The same array modified in place with no return value</label></li>
+            </ul>
+          </div>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>5.</strong> Which pair converts between objects and JSON strings?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q6-5" /> <code>JSON.stringify()</code> and <code>JSON.parse()</code></label></li>
+              <li><label><input type="radio" name="q6-5" /> <code>JSON.encode()</code> and <code>JSON.decode()</code></label></li>
+              <li><label><input type="radio" name="q6-5" /> <code>Object.toJSON()</code> and <code>Object.fromJSON()</code></label></li>
+              <li><label><input type="radio" name="q6-5" /> <code>String.stringify()</code> and <code>String.parse()</code></label></li>
+            </ul>
+          </div>
+
+          <details class="quiz-answers">
+            <summary>View Answer Key</summary>
+            <ol>
+              <li><strong>A</strong> — Dot or bracket notation accesses properties.</li>
+              <li><strong>A</strong> — Arrays are zero-indexed.</li>
+              <li><strong>A</strong> — push() adds to the end.</li>
+              <li><strong>A</strong> — map() transforms and returns a new array.</li>
+              <li><strong>A</strong> — stringify and parse handle JSON conversion.</li>
+            </ol>
+          </details>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════
+       10-DAY STUDY PLAN
+  ══════════════════════════════ -->
+      <section class="lesson" id="study-plan">
+        <div class="lesson-header">
+          <div class="lesson-num">Plan</div>
+          <div class="lesson-title-group">
+            <h2>10-Day Practice Roadmap</h2>
+            <span class="subtitle">Daily tasks to master JavaScript fundamentals</span>
+          </div>
+        </div>
+
+        <table class="ref-table">
+          <tr><th>Day</th><th>Focus</th><th>Tasks</th><th>Deliverable</th></tr>
+          <tr><td>1</td><td>Setup + Output</td><td>VS Code, <code>console.log</code>, <code>alert</code>, <code>prompt</code></td><td>Greeting program (Lessons 1–3)</td></tr>
+          <tr><td>2</td><td>Strings &amp; Numbers</td><td>Concat, length, index, escape chars, math, modulus</td><td>Mini calculator (Lesson 4)</td></tr>
+          <tr><td>3</td><td>Variables &amp; Types</td><td><code>let</code>, <code>const</code>, <code>typeof</code>, null, undefined</td><td>10 typed variables (Lessons 4–5)</td></tr>
+          <tr><td>4</td><td>Scope + Booleans</td><td>Global/function/block scope, <code>===</code>, falsy values</td><td>15 true/false predictions (Lesson 6)</td></tr>
+          <tr><td>5</td><td>Functions</td><td>All 9 Function Drills with View Answer</td><td><code>mathUtils.js</code> (Lesson 7)</td></tr>
+          <tr><td>6</td><td>Arrays</td><td>push/pop/shift/unshift, loops, map/filter</td><td>Grade list with average (Lesson 8)</td></tr>
+          <tr><td>7</td><td>Todo Project</td><td>add, list, delete, quit — console only</td><td>Working <code>todo.js</code> (Lesson 9)</td></tr>
+          <tr><td>8</td><td>Conditionals &amp; Loops</td><td>if/else, switch, for, while, FizzBuzz</td><td>FizzBuzz 1–30 (Lesson 10)</td></tr>
+          <tr><td>9</td><td>DOM + Events</td><td>querySelector, addEventListener, click handler</td><td>Interactive button page (Lessons 11–12)</td></tr>
+          <tr><td>10</td><td>Review + Quiz</td><td>Retake all quizzes on paper, live code review</td><td>Fix 3 bugs in broken code snippet</td></tr>
+        </table>
+
+        <div class="info-box info-tip">
+          <span class="icon">✅</span>
+          <div class="content">
+            <strong>Daily Routine (60–90 min)</strong>
+            <p>15 min review → 30 min new concept → 30 min hands-on → 10 min quiz (use 📸 Present Quiz for screenshots).</p>
+          </div>
+        </div>
+      </section>
+
     </main>
+
+
+    <div class="quiz-modal-overlay" id="quiz-modal-overlay" onclick="if(event.target===this)closeQuizModal()">
+      <div class="quiz-modal" id="quiz-modal">
+        <button class="quiz-modal-close" onclick="closeQuizModal()" title="Close">&times;</button>
+        <div class="quiz-modal-header">
+          <h3 id="quiz-modal-title">Quiz</h3>
+          <p>Write your answers (A, B, C, or D) in your notebook. We'll solve together after.</p>
+        </div>
+        <div id="quiz-modal-body"></div>
+        <div class="quiz-modal-footer">Tip: Screenshot this screen to share with students.</div>
+      </div>
+    </div>
 
     <button
       id="scrolltop"
@@ -528,19 +2763,50 @@ setInterval(() => {
     </button>
 
     <script>
-      // Progress bar
+      function presentQuiz(btn) {
+        const quizBlock = btn.closest(".exercise-block.quiz");
+        const title = quizBlock.querySelector("h5").textContent;
+        const questions = quizBlock.querySelectorAll(".quiz-question");
+        const letters = ["A", "B", "C", "D"];
+        let html = "";
+
+        questions.forEach((q, qi) => {
+          const qText = q.querySelector(".quiz-q").innerHTML;
+          const options = q.querySelectorAll(".quiz-options li label");
+          html += '<div class="quiz-present-item">';
+          html += "<p>" + qText + "</p><ul class=\"quiz-present-options\">";
+          options.forEach((opt, oi) => {
+            const text = opt.textContent.trim();
+            html += '<li><span class="letter">' + letters[oi] + ".</span> " + text + "</li>";
+          });
+          html += "</ul></div>";
+        });
+
+        document.getElementById("quiz-modal-title").textContent = title;
+        document.getElementById("quiz-modal-body").innerHTML = html;
+        document.getElementById("quiz-modal-overlay").classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeQuizModal() {
+        document.getElementById("quiz-modal-overlay").classList.remove("open");
+        document.body.style.overflow = "";
+      }
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeQuizModal();
+      });
+
       const progress = document.getElementById("progress");
       window.addEventListener("scroll", () => {
         const scrollTop = window.scrollY;
         const docHeight = document.body.scrollHeight - window.innerHeight;
         progress.style.width = (scrollTop / docHeight) * 100 + "%";
 
-        // Scroll to top button
         document
           .getElementById("scrolltop")
           .classList.toggle("visible", scrollTop > 400);
 
-        // Active nav link
         const sections = document.querySelectorAll(".lesson");
         const links = document.querySelectorAll(".nav-link");
         sections.forEach((s, i) => {

@@ -1,0 +1,37 @@
+      <!-- SCOPE SUPPLEMENT for variables lesson -->
+        <h3>JavaScript Scope</h3>
+        <p><strong>Scope</strong> refers to where variables, functions, and objects are visible and can be used in your code.</p>
+
+        <h4>Global Scope</h4>
+        <pre data-lang="JavaScript"><code>const appName = "TodoApp";  // global — visible everywhere
+
+function showApp() {
+  console.log(appName);  // ✅ works
+}</code></pre>
+
+        <h4>Function Scope</h4>
+        <pre data-lang="JavaScript"><code>function demo() {
+  let secret = "hidden";
+  console.log(secret);  // ✅
+}
+// console.log(secret);  // ❌ Error — not accessible outside</code></pre>
+
+        <h4>Block Scope</h4>
+        <pre data-lang="JavaScript"><code>if (true) {
+  let temp = 10;
+  console.log(temp);  // ✅
+}
+// console.log(temp);  // ❌ Error
+
+for (let i = 0; i < 3; i++) {
+  console.log(i);  // ✅ inside loop
+}
+// console.log(i);  // ❌ Error — let is block-scoped</code></pre>
+
+        <div class="info-box info-warn">
+          <span class="icon">⚠️</span>
+          <div class="content">
+            <strong>var vs let</strong>
+            <p><code>var</code> ignores block scope and leaks out of <code>if</code> and <code>for</code> blocks. Always prefer <code>let</code> and <code>const</code>.</p>
+          </div>
+        </div>

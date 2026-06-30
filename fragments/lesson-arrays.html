@@ -1,0 +1,150 @@
+      <!-- LESSON 08 — ARRAYS -->
+      <section class="lesson" id="arrays">
+        <div class="lesson-header">
+          <div class="lesson-num">Lesson 08</div>
+          <div class="lesson-title-group">
+            <h2>JavaScript Arrays</h2>
+            <span class="subtitle">Ordered lists of any data type</span>
+          </div>
+        </div>
+
+        <h3>What Is an Array?</h3>
+        <p>An <strong>array</strong> is an ordered list of values. Use arrays when order matters — shopping cart items, quiz scores, or a list of names.</p>
+
+        <h3>Creating Arrays</h3>
+        <pre data-lang="JavaScript"><code>const numbers = [10, 20, 30];              // array of numbers
+const names = ["Ada", "Emeka", "Chi"];     // array of strings
+const mixed = [1, "hello", true, null];    // mixed data types
+const matrix = [[1, 2], [3, 4]];           // array of arrays
+const users = [{ name: "Ada" }, { name: "Bob" }];  // array of objects</code></pre>
+
+        <h3>Accessing Elements</h3>
+        <pre data-lang="JavaScript"><code>console.log(numbers[0]);   // 10 — first element
+console.log(numbers[2]);   // 30 — third element
+console.log(numbers.length); // 3 — number of items</code></pre>
+
+        <h3>Modifying Elements</h3>
+        <pre data-lang="JavaScript"><code>numbers[1] = 99;
+console.log(numbers);  // [10, 99, 30]</code></pre>
+
+        <h3>Array Methods: push, pop, shift, unshift</h3>
+        <pre data-lang="JavaScript"><code>const fruits = ["Apple", "Banana"];
+
+fruits.push("Mango");      // add to END → ["Apple", "Banana", "Mango"]
+fruits.pop();              // remove from END → ["Apple", "Banana"]
+fruits.unshift("Grape");   // add to START → ["Grape", "Apple", "Banana"]
+fruits.shift();            // remove from START → ["Apple", "Banana"]</code></pre>
+
+        <h3>Looping Through Arrays</h3>
+        <pre data-lang="JavaScript"><code>const colors = ["red", "green", "blue"];
+
+// Classic for loop with index
+for (let i = 0; i < colors.length; i++) {
+  console.log(i, colors[i]);
+}
+
+// for...of — cleaner
+for (let color of colors) {
+  console.log(color);
+}
+
+// forEach method
+colors.forEach((color, index) => {
+  console.log(index, color);
+});</code></pre>
+
+        <h3>More Useful Methods</h3>
+        <pre data-lang="JavaScript"><code>const scores = [85, 90, 78, 92];
+
+scores.includes(90);                    // true
+scores.indexOf(78);                     // 2
+const doubled = scores.map(n => n * 2); // [170, 180, 156, 184]
+const passed = scores.filter(n => n >= 80); // [85, 90, 92]
+const total = scores.reduce((sum, n) => sum + n, 0); // 345</code></pre>
+
+        <hr class="section-divider" />
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 8.1</div>
+          <h5>Shopping List</h5>
+          <ol>
+            <li>Create an array of 5 grocery items</li>
+            <li>push a new item, then pop the last one</li>
+            <li>Loop and log each item with its index</li>
+            <li>Log the final length</li>
+          </ol>
+        </div>
+
+        <div class="exercise-block exercise">
+          <div class="block-label">✏️ Exercise 8.2</div>
+          <h5>Grade Analyzer</h5>
+          <ol>
+            <li>Create an array of 5 test scores</li>
+            <li>Use <code>reduce</code> to calculate the average</li>
+            <li>Use <code>filter</code> to get scores above 70</li>
+            <li>Use <code>map</code> to convert scores to letter grades</li>
+          </ol>
+        </div>
+
+        <div class="exercise-block quiz" data-quiz-id="arrays">
+          <div class="block-label">🎯 Quiz 8</div>
+          <h5>Lesson 8 — Knowledge Check (5 Questions)</h5>
+          <button type="button" class="btn-present-quiz" onclick="presentQuiz(this)">📸 Present Quiz for Screenshot</button>
+
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>1.</strong> What index is the first element in an array?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q8a-1" /> 0</label></li>
+              <li><label><input type="radio" name="q8a-1" /> 1</label></li>
+              <li><label><input type="radio" name="q8a-1" /> -1</label></li>
+              <li><label><input type="radio" name="q8a-1" /> Depends on length</label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>2.</strong> Which method adds an element to the <strong>end</strong>?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q8a-2" /> push()</label></li>
+              <li><label><input type="radio" name="q8a-2" /> pop()</label></li>
+              <li><label><input type="radio" name="q8a-2" /> unshift()</label></li>
+              <li><label><input type="radio" name="q8a-2" /> shift()</label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>3.</strong> What does <code>arr.length</code> return?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q8a-3" /> The number of elements in the array</label></li>
+              <li><label><input type="radio" name="q8a-3" /> The index of the last element only</label></li>
+              <li><label><input type="radio" name="q8a-3" /> The memory size of the array in bytes</label></li>
+              <li><label><input type="radio" name="q8a-3" /> The data type of the first element</label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>4.</strong> What does <code>array.map(fn)</code> return?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q8a-4" /> A new array with each element transformed</label></li>
+              <li><label><input type="radio" name="q8a-4" /> A new array with only matching elements</label></li>
+              <li><label><input type="radio" name="q8a-4" /> A single accumulated value</label></li>
+              <li><label><input type="radio" name="q8a-4" /> The same array modified in place</label></li>
+            </ul>
+          </div>
+          <div class="quiz-question">
+            <p class="quiz-q"><strong>5.</strong> Which creates an array of objects?</p>
+            <ul class="quiz-options">
+              <li><label><input type="radio" name="q8a-5" /> <code>[{ name: "Ada" }, { name: "Bob" }]</code></label></li>
+              <li><label><input type="radio" name="q8a-5" /> <code>{ name: "Ada", name: "Bob" }</code></label></li>
+              <li><label><input type="radio" name="q8a-5" /> <code>("Ada", "Bob")</code></label></li>
+              <li><label><input type="radio" name="q8a-5" /> <code>&lt;array&gt;Ada&lt;/array&gt;</code></label></li>
+            </ul>
+          </div>
+          <details class="quiz-answers">
+            <summary>View Answer Key</summary>
+            <ol>
+              <li><strong>A</strong> — Arrays are zero-indexed.</li>
+              <li><strong>A</strong> — push adds to end.</li>
+              <li><strong>A</strong> — length is element count.</li>
+              <li><strong>A</strong> — map transforms each element.</li>
+              <li><strong>A</strong> — Square brackets with objects.</li>
+            </ol>
+          </details>
+        </div>
+      </section>
