@@ -1,62 +1,34 @@
-// let friend1 = "Frank";
-// let friend2 = "Bob";
-// let friend3 = "Deco";
-// let friend4;
+let str = "Hello";
 
-// // alert("Hello " + friend1);
-// // alert(`Hello ${friend2}`);
-// // alert(`Hello ${friend3}`);
+let arr = ["Str", 80, null, false, true, undefined, () => {}, {}];
 
-// function greet() {
-//   alert("Hello");
-//   welcome();
+let fruit = "Apple";
+
+fruit = "coconut";
+
+const fruits = ["Apple", "Orange", "Banana", fruit, "Mango"];
+
+let numbers = [1, 2, 3, 4, 5];
+
+// Push, pop, shift, && unshift
+// numbers.pop();
+
+// numbers.push(9, 10, 77, 22, 1);
+
+// numbers.shift();
+
+// numbers.unshift(90, "Hello");
+
+// for loop
+
+// for (let index = 0; index < array.length; index++) {
+//   const element = array[index];
+
 // }
 
-// function welcome() {
-//   console.log("Welcome " + friend2);
-// }
-
-// function welcome1() {
-//   console.log("Welcome " + friend3);
-// }
-
-// function welcome2() {
-//   console.log("Welcome " + friend4);
-// }
-
-// greet();
-
-const isEven = (num) => (num % 2 === 0 ? "Yes" : "No");
-const isOdd = (num) => (num % 2 !== 0 ? "Yes" : "No");
-
-function cubeNum(num) {
-  return num ** 3;
+for (let index = 0; index < fruits.length; index++) {
+  console.log(fruits[index]);
 }
 
-function squNum(num) {
-  return num ** 2;
-}
-
-function addNum(a, b) {
-  return a + b;
-}
-
-function maxNum(x, y) {
-  if (x > y) {
-    return x;
-  }
-}
-
-// condition ? true : false;
-
-// if (num % 2 === 0) {
-//   return true;
-// } else {
-//   return false;
-// }
-
-// isEven(4); // true
-// isEven(6); // true
-// isEven(90); // true
-// isEven(88); // true
-// isEven(99); // false
+//["Apple", "Orange", "Banana", "Apple"] x5
+//["Apple", "Orange", "Banana", "Apple"] x4
